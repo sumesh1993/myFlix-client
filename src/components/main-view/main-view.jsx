@@ -1,5 +1,6 @@
 import React from 'react';
-import { MovieCard } from './movie-card/movie-card';
+import { MovieCard } from '../movie-card/movie-card';
+import { MovieView } from '../movie-view/movie-view';
 
  export default class MainView extends React.Component {
 
@@ -10,11 +11,14 @@ import { MovieCard } from './movie-card/movie-card';
                 {_id: 1, Title: 'Goodfellas', Description: ' movie description1', ImagePath: 'https://www.imdb.com/title/tt0099685/mediaviewer/rm2091797760/'},
                 {_id: 2, Title: 'Titanic', Description: 'movie description2', ImagePath: 'https://www.imdb.com/title/tt0120338/mediaviewer/rm2647458304/'},
                 {_id: 3, Title: 'Pulp Fiction', Description: 'movie description3', ImagePath: 'https://www.imdb.com/title/tt0110912/mediaviewer/rm1959546112/'}
-            ]
-        }
+            ],
+            selectedMovie: null
+        };
     }
     render() {
-        const { movies } = this.state;
+        const { movies, selectedMovie } = this.state;
+
+        if (selectedMovie) return <MovieView movie={selectedMovie} />
 
         if (movies.length ===0) return 
          <div className="main-view">The list is empty</div>;
