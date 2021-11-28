@@ -12,17 +12,17 @@ import React from 'react';
             ]
         }
     }
-    render () {
+    render() {
         const movies = this.state.movies;
-        if (movies.length === 0) {
-            return <div className="main-view">The list is empty</div>;
+        if (movies.length === 0){
+          return <div className="main-view">The list is empty!</div>;
         } else {
-            return (
-                <div className="main-view">
-                    {movies.map((movie) => {
-                        return <div>{movie.Title}</div>;
-                    })}
-                </div>
-            );
-        }
-    }
+          return (
+            <div className="main-view">
+              {movies.map((movie) => {
+                return <div>{movie.Title}</div>;
+              })}
+            </div>
+          );
+        }}
+      }

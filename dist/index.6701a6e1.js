@@ -945,26 +945,19 @@ var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
 var _reactDom = require("react-dom");
 var _reactDomDefault = parcelHelpers.interopDefault(_reactDom);
+var _mainView = require("./components/main-view/main-view");
+var _mainViewDefault = parcelHelpers.interopDefault(_mainView);
 //Import statement to indicate that `./index.scss` needs to be bundled
 var _indexScss = require("./index.scss");
 //Main component 
 class MyFlixApplication extends _reactDefault.default.Component {
     render() {
-        return(/*#__PURE__*/ _jsxRuntime.jsx("div", {
-            classname: "my-flix",
+        return(/*#__PURE__*/ _jsxRuntime.jsx(_mainViewDefault.default, {
             __source: {
                 fileName: "src/index.jsx",
-                lineNumber: 11
+                lineNumber: 12
             },
-            __self: this,
-            children: /*#__PURE__*/ _jsxRuntime.jsx("div", {
-                __source: {
-                    fileName: "src/index.jsx",
-                    lineNumber: 12
-                },
-                __self: this,
-                children: "Good morning"
-            })
+            __self: this
         }));
     }
 }
@@ -978,7 +971,7 @@ _reactDomDefault.default.render(/*#__PURE__*/ _reactDefault.default.createElemen
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"8xIwr","react":"6TuXu","react-dom":"gkWJK","./index.scss":"jUTZ8","@parcel/transformer-js/src/esmodule-helpers.js":"ivraG","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"bJ6ws"}],"8xIwr":[function(require,module,exports) {
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","react-dom":"gkWJK","./components/main-view/main-view":"2zHas","./index.scss":"jUTZ8","@parcel/transformer-js/src/esmodule-helpers.js":"ivraG","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"bJ6ws"}],"8xIwr":[function(require,module,exports) {
 'use strict';
 module.exports = require('./cjs/react-jsx-runtime.development.js');
 
@@ -22736,7 +22729,83 @@ module.exports = require('./cjs/scheduler-tracing.development.js');
     exports.unstable_wrap = unstable_wrap;
 })();
 
-},{}],"jUTZ8":[function() {},{}],"ivraG":[function(require,module,exports) {
+},{}],"2zHas":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$35bf = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$35bf.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxRuntime = require("react/jsx-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+class MainView extends _reactDefault.default.Component {
+    constructor(){
+        super();
+        this.state = {
+            movies: [
+                {
+                    _id: 1,
+                    Title: 'Goodfellas',
+                    Description: ' movie description1',
+                    ImagePath: 'https://www.imdb.com/title/tt0099685/mediaviewer/rm2091797760/'
+                },
+                {
+                    _id: 2,
+                    Title: 'Titanic',
+                    Description: 'movie description2',
+                    ImagePath: 'https://www.imdb.com/title/tt0120338/mediaviewer/rm2647458304/'
+                },
+                {
+                    _id: 3,
+                    Title: 'Pulp Fiction',
+                    Description: 'movie description3',
+                    ImagePath: 'https://www.imdb.com/title/tt0110912/mediaviewer/rm1959546112/'
+                }
+            ]
+        };
+    }
+    render() {
+        const movies = this.state.movies;
+        if (movies.length === 0) return(/*#__PURE__*/ _jsxRuntime.jsx("div", {
+            className: "main-view",
+            __source: {
+                fileName: "src/components/main-view/main-view.jsx",
+                lineNumber: 18
+            },
+            __self: this,
+            children: "The list is empty!"
+        }));
+        else return(/*#__PURE__*/ _jsxRuntime.jsx("div", {
+            className: "main-view",
+            __source: {
+                fileName: "src/components/main-view/main-view.jsx",
+                lineNumber: 21
+            },
+            __self: this,
+            children: movies.map((movie)=>{
+                return(/*#__PURE__*/ _jsxRuntime.jsx("div", {
+                    __source: {
+                        fileName: "src/components/main-view/main-view.jsx",
+                        lineNumber: 23
+                    },
+                    __self: this,
+                    children: movie.Title
+                }));
+            })
+        }));
+    }
+}
+exports.default = MainView;
+
+  $parcel$ReactRefreshHelpers$35bf.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","@parcel/transformer-js/src/esmodule-helpers.js":"ivraG","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"bJ6ws"}],"ivraG":[function(require,module,exports) {
 exports.interopDefault = function(a) {
     return a && a.__esModule ? a : {
         default: a
@@ -22888,6 +22957,6 @@ function registerExportsForReactRefresh(module) {
     }
 }
 
-},{"react-refresh/runtime":"dSHUm"}]},["82zjU","ivKX3","dLPEP"], "dLPEP", "parcelRequire94c2")
+},{"react-refresh/runtime":"dSHUm"}],"jUTZ8":[function() {},{}]},["82zjU","ivKX3","dLPEP"], "dLPEP", "parcelRequire94c2")
 
 //# sourceMappingURL=index.6701a6e1.js.map
