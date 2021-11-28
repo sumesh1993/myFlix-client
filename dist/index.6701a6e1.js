@@ -22793,7 +22793,7 @@ class MainView extends _reactDefault.default.Component {
                     },
                     __self: this,
                     children: movie.Title
-                }));
+                }, movie._id));
             })
         }));
     }

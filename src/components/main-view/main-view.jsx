@@ -20,7 +20,7 @@ import React from 'react';
           return (
             <div className="main-view">
               {movies.map((movie) => {
-                return <div>{movie.Title}</div>;
+                return <div key={movie._id}>{movie.Title}</div>;
               })}
             </div>
           );
