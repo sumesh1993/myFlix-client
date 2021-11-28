@@ -23,5 +23,5 @@ import { MovieCard } from './movie-card/movie-card';
             <div className="main-view">
                 {movies.map(movie => <MovieCard key={movie._id} movieData={movie}/>)}
             </div>
-        )};
+        )}; 
     }
