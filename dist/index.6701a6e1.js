@@ -22741,6 +22741,7 @@ parcelHelpers.defineInteropFlag(exports);
 var _jsxRuntime = require("react/jsx-runtime");
 var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
+var _movieCard = require("./movie-card/movie-card");
 class MainView extends _reactDefault.default.Component {
     constructor(){
         super();
@@ -22768,33 +22769,32 @@ class MainView extends _reactDefault.default.Component {
         };
     }
     render() {
-        const movies = this.state.movies;
-        if (movies.length === 0) return(/*#__PURE__*/ _jsxRuntime.jsx("div", {
+        const { movies  } = this.state;
+        if (movies.length === 0) return;
+        /*#__PURE__*/ _jsxRuntime.jsx("div", {
             className: "main-view",
             __source: {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 18
+                lineNumber: 20
             },
             __self: this,
-            children: "The list is empty!"
-        }));
-        else return(/*#__PURE__*/ _jsxRuntime.jsx("div", {
+            children: "The list is empty"
+        });
+        return(/*#__PURE__*/ _jsxRuntime.jsx("div", {
             className: "main-view",
             __source: {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 21
+                lineNumber: 23
             },
             __self: this,
-            children: movies.map((movie)=>{
-                return(/*#__PURE__*/ _jsxRuntime.jsx("div", {
+            children: movies.map((movie)=>/*#__PURE__*/ _jsxRuntime.jsx(_movieCard.MovieCard, {
                     __source: {
                         fileName: "src/components/main-view/main-view.jsx",
-                        lineNumber: 23
+                        lineNumber: 24
                     },
-                    __self: this,
-                    children: movie.Title
-                }, movie._id));
-            })
+                    __self: this
+                })
+            )
         }));
     }
 }
@@ -22805,7 +22805,7 @@ exports.default = MainView;
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"8xIwr","react":"6TuXu","@parcel/transformer-js/src/esmodule-helpers.js":"ivraG","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"bJ6ws"}],"ivraG":[function(require,module,exports) {
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","@parcel/transformer-js/src/esmodule-helpers.js":"ivraG","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"bJ6ws","./movie-card/movie-card":"2d1Ny"}],"ivraG":[function(require,module,exports) {
 exports.interopDefault = function(a) {
     return a && a.__esModule ? a : {
         default: a
@@ -22957,6 +22957,39 @@ function registerExportsForReactRefresh(module) {
     }
 }
 
-},{"react-refresh/runtime":"dSHUm"}],"jUTZ8":[function() {},{}]},["82zjU","ivKX3","dLPEP"], "dLPEP", "parcelRequire94c2")
+},{"react-refresh/runtime":"dSHUm"}],"2d1Ny":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$4d2d = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$4d2d.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "MovieCard", ()=>MovieCard
+);
+var _jsxRuntime = require("react/jsx-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+class MovieCard extends _reactDefault.default.Component {
+    render() {
+        return(/*#__PURE__*/ _jsxRuntime.jsx("div", {
+            className: "movie-card",
+            __source: {
+                fileName: "src/components/main-view/movie-card/movie-card.jsx",
+                lineNumber: 5
+            },
+            __self: this,
+            children: "some title"
+        }));
+    }
+}
+
+  $parcel$ReactRefreshHelpers$4d2d.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","@parcel/transformer-js/src/esmodule-helpers.js":"ivraG","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"bJ6ws"}],"jUTZ8":[function() {},{}]},["82zjU","ivKX3","dLPEP"], "dLPEP", "parcelRequire94c2")
 
 //# sourceMappingURL=index.6701a6e1.js.map
