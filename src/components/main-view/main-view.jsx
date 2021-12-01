@@ -15,7 +15,7 @@ import { MovieView } from '../movie-view/movie-view';
     }
 
     componentDidMount() {
-      axios.get ('https://myflix-movietime.herokuapp.com/movies')
+      axios.get ('https://myflix-movietime.herokuapp.com/')
       .then(response => {
         this.setState( {
           movies: response.data
@@ -28,16 +28,14 @@ import { MovieView } from '../movie-view/movie-view';
 
     setSelectedMovie(newSelectedMovie) {
         this.setState({
-          
-            selectedMovie: newSelectedMovie
+          selectedMovie: newSelectedMovie
     });
    }
 
     render() {
         const { movies, selectedMovie } = this.state;
 
-        if (movies.length === 0) return 
-         <div className="main-view">The list is empty</div>;
+        if (movies.length === 0) return <div className="main-view"/>
 
          return (
             <div className="main-view">
