@@ -17,7 +17,7 @@ import { MovieView } from '../movie-view/movie-view';
     }
 
     componentDidMount() {
-      axios.get ('https://myflix-movietime.herokuapp.com/')
+      axios.get ('https://myflix-movietime.herokuapp.com/movies')
       .then(response => {
         this.setState( {
           movies: response.data
@@ -25,6 +25,12 @@ import { MovieView } from '../movie-view/movie-view';
       })
       .catch(error => {
         console.log(error);
+      });
+    }
+
+    setSelectedMovie(newSelectedMovie) {
+      this.setState({
+        selectedMovie: newSelectedMovie
       });
     }
 
@@ -48,7 +54,7 @@ import { MovieView } from '../movie-view/movie-view';
 
     render() {
         const { movies, selectedMovie, user } = this.state;
-        
+
         /* If there is no user, the LoginView is rendered. 
         If there is a user logged in, the user details are *passed as a prop to the LoginView*/
         if  (!user) return <LoginView onLoggedIn={user => this.onLoggedIn(user)} />;
