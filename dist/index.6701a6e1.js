@@ -24410,7 +24410,9 @@ MovieCard.propTypes = {
     movie: _propTypesDefault.default.shape({
         Title: _propTypesDefault.default.string.isRequired,
         Description: _propTypesDefault.default.string.isRequired,
-        Genre: _propTypesDefault.default.string.isRequired,
+        Genre: _propTypesDefault.default.shape({
+            Name: _propTypesDefault.default.string.isRequired
+        }),
         Year: _propTypesDefault.default.number.isRequired,
         ImagePath: _propTypesDefault.default.string.isRequired
     }).isRequired,
