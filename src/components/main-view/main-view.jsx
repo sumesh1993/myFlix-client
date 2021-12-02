@@ -6,75 +6,73 @@ import { LoginView } from '../login-view/login-view';
 import { MovieCard } from '../movie-card/movie-card';
 import { MovieView } from '../movie-view/movie-view';
 
- export default class MainView extends React.Component {
+export default class MainView extends React.Component {
 
-    constructor() {  
-        super();
-        this.state = {       // Initial state is set to null
-            movies: [],
-            selectedMovie: null,
-            register: null,
-            user: null
-        };
-    }
+  constructor() {
+    super();
+    this.state = {       // Initial state is set to null
+      movies: [],
+      selectedMovie: null,
+      register: null,
+      user: null
+    };
+  }
 
-    componentDidMount() {
-      axios.get ('https://myflix-movietime.herokuapp.com/movies')
+  componentDidMount() {
+    axios.get('https://myflix-movietime.herokuapp.com/movies')
       .then(response => {
-        this.setState( {
+        this.setState({
           movies: response.data
         });
       })
       .catch(error => {
         console.log(error);
       });
-    }
+  }
 
-    setSelectedMovie(newSelectedMovie) {
-      this.setState({
-        selectedMovie: newSelectedMovie
-      });
-    }
-
-    /*When a movie is clicked, this function is invoked and updates the
-     state of the `selectedMovie` *property to that movie*/
-
-    /*setSelectedMovie(movie) {
-        this.setState({
-          selectedMovie: movie
+  setSelectedMovie(newSelectedMovie) {
+    this.setState({
+      selectedMovie: newSelectedMovie
     });
-   }
+  }
 
-   /* When a user successfully logs in, this function updates 
-   the `user` property in state to that *particular user*/
+  /*When a movie is clicked, this function is invoked and updates the
+   state of the `selectedMovie` *property to that movie*/
 
-   onLoggedIn(user) {
-     this.setState( {
-       user
-     });
-   }
+  setSelectedMovie(movie) {
+    this.setState({
+      selectedMovie: movie
+    });
+  }
 
-    render() {
-        const { movies, selectedMovie, user } = this.state;
+  /* When a user successfully logs in, this function updates 
+  the `user` property in state to that *particular user*/
 
-        /* If there is no user, the LoginView is rendered. 
-        If there is a user logged in, the user details are *passed as a prop to the LoginView*/
-        if  (!user) return <LoginView onLoggedIn={user => this.onLoggedIn(user)} />;
+  onLoggedIn(user) {
+    this.setState({
+      user
+    });
+  }
 
-     
-        if (movies.length === 0) return <div className="main-view"/>
+  render() {
+    const { movies, selectedMovie, user } = this.state;
 
-         return (
-            <div className="main-view">
-              {selectedMovie
-                ? <MovieView movie = {selectedMovie} onBackClick={newSelectedMovie => 
-                  { this.setSelectedMovie(newSelectedMovie); }} />
-                : movies.map(movie => (
-                  <MovieCard key = {movie._id} movie={movie} onMovieClick={(movie) => 
-                    { this.setSelectedMovie(movie) }} />
-                  ))
-              }
-            </div>
-          );
+    /* If there is no user, the LoginView is rendered. 
+    If there is a user logged in, the user details are *passed as a prop to the LoginView*/
+    if (!user) return <LoginView onLoggedIn={user => this.onLoggedIn(user)} />;
+
+
+    if (movies.length === 0) return <div className="main-view" />
+
+    return (
+      <div className="main-view">
+        {selectedMovie
+          ? <MovieView movie={selectedMovie} onBackClick={newSelectedMovie => { this.setSelectedMovie(newSelectedMovie); }} />
+          : movies.map(movie => (
+            <MovieCard key={movie._id} movie={movie} onMovieClick={(movie) => { this.setSelectedMovie(movie) }} />
+          ))
         }
-      }
+      </div>
+    );
+  }
+}
