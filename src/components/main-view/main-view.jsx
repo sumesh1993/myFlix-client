@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 
+import { RegistrationView } from '../registration-view/registration-view';
 import { LoginView } from '../login-view/login-view';
 import { MovieCard } from '../movie-card/movie-card';
 import { MovieView } from '../movie-view/movie-view';
@@ -12,6 +13,7 @@ import { MovieView } from '../movie-view/movie-view';
         this.state = {       // Initial state is set to null
             movies: [],
             selectedMovie: null,
+            register: null,
             user: null
         };
     }
@@ -37,7 +39,7 @@ import { MovieView } from '../movie-view/movie-view';
     /*When a movie is clicked, this function is invoked and updates the
      state of the `selectedMovie` *property to that movie*/
 
-    setSelectedMovie(movie) {
+    /*setSelectedMovie(movie) {
         this.setState({
           selectedMovie: movie
     });
@@ -68,8 +70,8 @@ import { MovieView } from '../movie-view/movie-view';
                 ? <MovieView movie = {selectedMovie} onBackClick={newSelectedMovie => 
                   { this.setSelectedMovie(newSelectedMovie); }} />
                 : movies.map(movie => (
-                  <MovieCard key = {movie._id} movie={movie} onMovieClick={(newSelectedMovie) => 
-                    { this.setSelectedMovie(newSelectedMovie) }} />
+                  <MovieCard key = {movie._id} movie={movie} onMovieClick={(movie) => 
+                    { this.setSelectedMovie(movie) }} />
                   ))
               }
             </div>
