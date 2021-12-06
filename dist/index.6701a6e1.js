@@ -45,7 +45,7 @@
           return currentRequire(name, true);
         }
 
-        // If there are other bundles on this page the require from the
+        // If there are other bundles on this page the require from th
         // previous one is saved to 'previousRequire'. Repeat this as
         // many times as there are bundles until the module is found or
         // we exhaust the require chain.
