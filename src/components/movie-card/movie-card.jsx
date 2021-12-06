@@ -1,29 +1,33 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Button from 'react-bootstrap/Button';
-import Card from 'react-bootstrap/Card';
-import Container from 'react-bootstrap/Container';
+import { Button, Card, CardGroup, Container, Row, Col } from 'react-bootstrap';
 
-import "./movie-card.scss";
+import './movie-card.scss';
+
 
 export class MovieCard extends React.Component {
-    render() {
-        const { movie, onMovieClick } = this.props;
+  render() {
+    const { movie, onMovieClick  } = this.props;
 
-        return (
-          <Container>
-          <Card className='movie-card' style={{ marginTop: `5rem` }}> 
-            <Card.Img variant="top" src={movie.ImagePath} crossOrigin="anonymous"/>
-            <Card.Body>
-              <Card.Title style={{ fontWeight: 600 }}>{movie.Title}</Card.Title>
-              <Card.Text>{movie.description}</Card.Text>
-              <Button onClick={()=> onMovieClick(movie)} variant="link">Open</Button>
-            </Card.Body>
-          </Card>
-          </Container>
-        );
-    }
+    return (
+      <Container className="movieContainer">
+        <Row>
+          <Col>
+            <CardGroup>
+              <Card className="movieCard text-center" >
+                <Card.Img className="cardImage" variant="top" src={movie.ImagePath} crossOrigin="anonymous"/>
+                <Card.Body>
+                  <Card.Title>{movie.Title}</Card.Title>
+                  <Button variant="secondary" className="detailButton color blue" onClick={() => onMovieClick(movie)} >Details</Button>
+                </Card.Body>
+              </Card>
+            </CardGroup>
+          </Col>
+        </Row>
+      </Container>
+    );
   }
+}
 
   MovieCard.propTypes = {
     movie: PropTypes.shape ({
