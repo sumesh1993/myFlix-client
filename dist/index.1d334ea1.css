@@ -1,5 +1,10 @@
 
-.my-flix {
-  color: steelblue;
+
+
+html,
+body,
+.app-container {
+  background-color: #0a75ad;
+  font-family: "Lato", sans-serif;
 }
 /*# sourceMappingURL=index.1d334ea1.css.map */
