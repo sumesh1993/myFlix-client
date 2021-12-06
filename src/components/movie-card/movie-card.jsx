@@ -13,7 +13,7 @@ export class MovieCard extends React.Component {
           <Card> 
             <Card.Img variant="top" src={movie.ImagePath} crossOrigin="anonymous"/>
             <Card.Body>
-              <Card.Title>{movie.Title}</Card.Title>
+              <Card.Title style={{ fontWeight: 600 }}>{movie.Title}</Card.Title>
               <Card.Text>{movie.description}</Card.Text>
               <Button onClick={()=> onMovieClick(movie)} variant="link">Open</Button>
             </Card.Body>
