@@ -72,7 +72,6 @@ export default class MainView extends React.Component {
     If there is a user logged in, the user details are *passed as a prop to the LoginView*/
     if (!user) return <LoginView onLoggedIn={user => this.onLoggedIn(user)} />;
 
-
     if (movies.length === 0) return <div className="main-view" />
 
     return (
@@ -80,12 +79,14 @@ export default class MainView extends React.Component {
         {selectedMovie
           ? (
             <Col md={8}>
-              <MovieView movie={selectedMovie} onBackClick={newSelectedMovie => { this.setSelectedMovie(newSelectedMovie); }} />
+              <MovieView movie={selectedMovie} onBackClick={newSelectedMovie => 
+                { this.setSelectedMovie(newSelectedMovie); }} />
             </Col>
           )
           : movies.map(movie => (
             <Col md={3}>
-              <MovieCard key={movie._id} movie={movie} onMovieClick={newSelectedMovie => { this.setSelectedMovie(newSelectedMovie); }}/>
+              <MovieCard key={movie._id} movie={movie} onMovieClick={newSelectedMovie => 
+                { this.setSelectedMovie(newSelectedMovie); }}/>
             </Col>
           ))
         }
