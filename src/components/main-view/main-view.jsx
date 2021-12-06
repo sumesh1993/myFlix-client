@@ -54,6 +54,12 @@ export default class MainView extends React.Component {
     });
   }
 
+  onRegistration(register) {
+    this.state({
+      register,
+    });
+  }
+
   render() {
     const { movies, selectedMovie, user } = this.state;
 
