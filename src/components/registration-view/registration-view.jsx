@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 
-export function ReagistrationView(props) {
+export function RegistrationView(props) {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [email, setEmail] = useState('');
@@ -8,8 +9,8 @@ export function ReagistrationView(props) {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log(username, password);
-        props.handleRegistration(username);
+        console.log(username, password, email, birthday);
+        props.onRegistration(register);
     };
 
     return (
@@ -34,3 +35,16 @@ export function ReagistrationView(props) {
         </form>
     );
 }
+     
+RegistrationView.propTypes = {
+    register: PropTypes.shape({
+      Username: PropTypes.string.isRequired,
+      Password: PropTypes.string.isRequired,
+      Email: PropTypes.string.isRequired,
+      Birthday: PropTypes.string.isRequired
+    }),
+    onRegistration: PropTypes.func.isRequired
+};
+       
+
+ 
