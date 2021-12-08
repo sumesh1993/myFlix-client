@@ -18,7 +18,7 @@ export class MovieCard extends React.Component {
                 <Card.Img className="cardImage" variant="top" src={movie.ImagePath} crossOrigin="anonymous"/>
                 <Card.Body>
                   <Card.Title>{movie.Title}</Card.Title>
-                  <Button variant="secondary" className="detailButton color blue" onClick={() => onMovieClick(movie)} >Details</Button>
+                  <Button variant="secondary" onClick={() => onMovieClick(movie)} >Details</Button>
                 </Card.Body>
               </Card>
             </CardGroup>
