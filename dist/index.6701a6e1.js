@@ -22752,10 +22752,7 @@ var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
 var _axios = require("axios");
 var _axiosDefault = parcelHelpers.interopDefault(_axios);
-var _row = require("react-bootstrap/Row");
-var _rowDefault = parcelHelpers.interopDefault(_row);
-var _col = require("react-bootstrap/Col");
-var _colDefault = parcelHelpers.interopDefault(_col);
+var _reactBootstrap = require("react-bootstrap");
 var _mainViewScss = require("./main-view.scss");
 var _registrationView = require("../registration-view/registration-view");
 var _loginView = require("../login-view/login-view");
@@ -22809,7 +22806,7 @@ class MainView extends _reactDefault.default.Component {
             ,
             __source: {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 74
+                lineNumber: 73
             },
             __self: this
         }));
@@ -22819,7 +22816,7 @@ class MainView extends _reactDefault.default.Component {
             ,
             __source: {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 79
+                lineNumber: 78
             },
             __self: this
         }));
@@ -22827,22 +22824,22 @@ class MainView extends _reactDefault.default.Component {
             className: "main-view",
             __source: {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 81
+                lineNumber: 80
             },
             __self: this
         }));
-        return(/*#__PURE__*/ _jsxRuntime.jsx(_rowDefault.default, {
+        return(/*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Row, {
             className: "main-view justify-content-md-center",
             __source: {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 84
+                lineNumber: 83
             },
             __self: this,
-            children: selectedMovie ? /*#__PURE__*/ _jsxRuntime.jsx(_colDefault.default, {
+            children: selectedMovie ? /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Col, {
                 md: 8,
                 __source: {
                     fileName: "src/components/main-view/main-view.jsx",
-                    lineNumber: 87
+                    lineNumber: 86
                 },
                 __self: this,
                 children: /*#__PURE__*/ _jsxRuntime.jsx(_movieView.MovieView, {
@@ -22852,15 +22849,15 @@ class MainView extends _reactDefault.default.Component {
                     },
                     __source: {
                         fileName: "src/components/main-view/main-view.jsx",
-                        lineNumber: 88
+                        lineNumber: 87
                     },
                     __self: this
                 })
-            }) : movies.map((movie)=>/*#__PURE__*/ _jsxRuntime.jsx(_colDefault.default, {
+            }) : movies.map((movie)=>/*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Col, {
                     md: 3,
                     __source: {
                         fileName: "src/components/main-view/main-view.jsx",
-                        lineNumber: 93
+                        lineNumber: 92
                     },
                     __self: this,
                     children: /*#__PURE__*/ _jsxRuntime.jsx(_movieCard.MovieCard, {
@@ -22870,7 +22867,7 @@ class MainView extends _reactDefault.default.Component {
                         },
                         __source: {
                             fileName: "src/components/main-view/main-view.jsx",
-                            lineNumber: 94
+                            lineNumber: 93
                         },
                         __self: this
                     }, movie._id)
@@ -22886,7 +22883,7 @@ exports.default = MainView;
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"8xIwr","react":"6TuXu","axios":"iYoWk","react-bootstrap/Row":"c0x1x","react-bootstrap/Col":"fbam0","./main-view.scss":"jyMAr","../registration-view/registration-view":"aP2YV","../login-view/login-view":"054li","../movie-card/movie-card":"6EiBJ","../movie-view/movie-view":"ikZdr","@parcel/transformer-js/src/esmodule-helpers.js":"ivraG","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"bJ6ws"}],"iYoWk":[function(require,module,exports) {
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","axios":"iYoWk","./main-view.scss":"jyMAr","../registration-view/registration-view":"aP2YV","../login-view/login-view":"054li","../movie-card/movie-card":"6EiBJ","../movie-view/movie-view":"ikZdr","@parcel/transformer-js/src/esmodule-helpers.js":"ivraG","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"bJ6ws","react-bootstrap":"h2YVd"}],"iYoWk":[function(require,module,exports) {
 module.exports = require('./lib/axios');
 
 },{"./lib/axios":"3QmO2"}],"3QmO2":[function(require,module,exports) {
@@ -24444,232 +24441,7 @@ module.exports = CancelToken;
     return typeof payload === 'object' && payload.isAxiosError === true;
 };
 
-},{}],"c0x1x":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _classnames = require("classnames");
-var _classnamesDefault = parcelHelpers.interopDefault(_classnames);
-var _react = require("react");
-var _themeProvider = require("./ThemeProvider");
-var _jsxRuntime = require("react/jsx-runtime");
-const DEVICE_SIZES = [
-    'xxl',
-    'xl',
-    'lg',
-    'md',
-    'sm',
-    'xs'
-];
-const Row = /*#__PURE__*/ _react.forwardRef(({ bsPrefix , className , // Need to define the default "as" during prop destructuring to be compatible with styled-components github.com/react-bootstrap/react-bootstrap/issues/3595
-as: Component = 'div' , ...props }, ref)=>{
-    const decoratedBsPrefix = _themeProvider.useBootstrapPrefix(bsPrefix, 'row');
-    const sizePrefix = `${decoratedBsPrefix}-cols`;
-    const classes = [];
-    DEVICE_SIZES.forEach((brkPoint)=>{
-        const propValue = props[brkPoint];
-        delete props[brkPoint];
-        let cols;
-        if (propValue != null && typeof propValue === 'object') ({ cols  } = propValue);
-        else cols = propValue;
-        const infix = brkPoint !== 'xs' ? `-${brkPoint}` : '';
-        if (cols != null) classes.push(`${sizePrefix}${infix}-${cols}`);
-    });
-    return(/*#__PURE__*/ _jsxRuntime.jsx(Component, {
-        ref: ref,
-        ...props,
-        className: _classnamesDefault.default(className, decoratedBsPrefix, ...classes)
-    }));
-});
-Row.displayName = 'Row';
-exports.default = Row;
-
-},{"classnames":"bOXOh","react":"6TuXu","./ThemeProvider":"eeqfi","react/jsx-runtime":"8xIwr","@parcel/transformer-js/src/esmodule-helpers.js":"ivraG"}],"bOXOh":[function(require,module,exports) {
-(function() {
-    var hasOwn = {
-    }.hasOwnProperty;
-    function classNames() {
-        var classes = [];
-        for(var i = 0; i < arguments.length; i++){
-            var arg = arguments[i];
-            if (!arg) continue;
-            var argType = typeof arg;
-            if (argType === 'string' || argType === 'number') classes.push(arg);
-            else if (Array.isArray(arg)) {
-                if (arg.length) {
-                    var inner = classNames.apply(null, arg);
-                    if (inner) classes.push(inner);
-                }
-            } else if (argType === 'object') {
-                if (arg.toString === Object.prototype.toString) {
-                    for(var key in arg)if (hasOwn.call(arg, key) && arg[key]) classes.push(key);
-                } else classes.push(arg.toString());
-            }
-        }
-        return classes.join(' ');
-    }
-    if (typeof module !== 'undefined' && module.exports) {
-        classNames.default = classNames;
-        module.exports = classNames;
-    } else if (typeof define === 'function' && typeof define.amd === 'object' && define.amd) // register as 'classnames', consistent with npm package name
-    define('classnames', [], function() {
-        return classNames;
-    });
-    else window.classNames = classNames;
-})();
-
-},{}],"eeqfi":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "useBootstrapPrefix", ()=>useBootstrapPrefix
-);
-parcelHelpers.export(exports, "useIsRTL", ()=>useIsRTL
-);
-parcelHelpers.export(exports, "createBootstrapComponent", ()=>createBootstrapComponent
-);
-parcelHelpers.export(exports, "ThemeConsumer", ()=>Consumer
-);
-var _react = require("react");
-var _jsxRuntime = require("react/jsx-runtime");
-const ThemeContext = /*#__PURE__*/ _react.createContext({
-    prefixes: {
-    }
-});
-const { Consumer , Provider  } = ThemeContext;
-function ThemeProvider({ prefixes ={
-} , dir , children  }) {
-    const contextValue = _react.useMemo(()=>({
-            prefixes: {
-                ...prefixes
-            },
-            dir
-        })
-    , [
-        prefixes,
-        dir
-    ]);
-    return(/*#__PURE__*/ _jsxRuntime.jsx(Provider, {
-        value: contextValue,
-        children: children
-    }));
-}
-function useBootstrapPrefix(prefix, defaultPrefix) {
-    const { prefixes  } = _react.useContext(ThemeContext);
-    return prefix || prefixes[defaultPrefix] || defaultPrefix;
-}
-function useIsRTL() {
-    const { dir  } = _react.useContext(ThemeContext);
-    return dir === 'rtl';
-}
-function createBootstrapComponent(Component, opts) {
-    if (typeof opts === 'string') opts = {
-        prefix: opts
-    };
-    const isClassy = Component.prototype && Component.prototype.isReactComponent; // If it's a functional component make sure we don't break it with a ref
-    const { prefix , forwardRefAs =isClassy ? 'ref' : 'innerRef'  } = opts;
-    const Wrapped = /*#__PURE__*/ _react.forwardRef(({ ...props }, ref)=>{
-        props[forwardRefAs] = ref;
-        const bsPrefix = useBootstrapPrefix(props.bsPrefix, prefix);
-        return(/*#__PURE__*/ _jsxRuntime.jsx(Component, {
-            ...props,
-            bsPrefix: bsPrefix
-        }));
-    });
-    Wrapped.displayName = `Bootstrap(${Component.displayName || Component.name})`;
-    return Wrapped;
-}
-exports.default = ThemeProvider;
-
-},{"react":"6TuXu","react/jsx-runtime":"8xIwr","@parcel/transformer-js/src/esmodule-helpers.js":"ivraG"}],"ivraG":[function(require,module,exports) {
-exports.interopDefault = function(a) {
-    return a && a.__esModule ? a : {
-        default: a
-    };
-};
-exports.defineInteropFlag = function(a) {
-    Object.defineProperty(a, '__esModule', {
-        value: true
-    });
-};
-exports.exportAll = function(source, dest) {
-    Object.keys(source).forEach(function(key) {
-        if (key === 'default' || key === '__esModule') return;
-        // Skip duplicate re-exports when they have the same value.
-        if (key in dest && dest[key] === source[key]) return;
-        Object.defineProperty(dest, key, {
-            enumerable: true,
-            get: function() {
-                return source[key];
-            }
-        });
-    });
-    return dest;
-};
-exports.export = function(dest, destName, get) {
-    Object.defineProperty(dest, destName, {
-        enumerable: true,
-        get: get
-    });
-};
-
-},{}],"fbam0":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "useCol", ()=>useCol
-);
-var _classnames = require("classnames");
-var _classnamesDefault = parcelHelpers.interopDefault(_classnames);
-var _react = require("react");
-var _themeProvider = require("./ThemeProvider");
-var _jsxRuntime = require("react/jsx-runtime");
-const DEVICE_SIZES = [
-    'xxl',
-    'xl',
-    'lg',
-    'md',
-    'sm',
-    'xs'
-];
-function useCol({ as , bsPrefix , className , ...props }) {
-    bsPrefix = _themeProvider.useBootstrapPrefix(bsPrefix, 'col');
-    const spans = [];
-    const classes = [];
-    DEVICE_SIZES.forEach((brkPoint)=>{
-        const propValue = props[brkPoint];
-        delete props[brkPoint];
-        let span;
-        let offset;
-        let order;
-        if (typeof propValue === 'object' && propValue != null) ({ span , offset , order  } = propValue);
-        else span = propValue;
-        const infix = brkPoint !== 'xs' ? `-${brkPoint}` : '';
-        if (span) spans.push(span === true ? `${bsPrefix}${infix}` : `${bsPrefix}${infix}-${span}`);
-        if (order != null) classes.push(`order${infix}-${order}`);
-        if (offset != null) classes.push(`offset${infix}-${offset}`);
-    });
-    return [
-        {
-            ...props,
-            className: _classnamesDefault.default(className, ...spans, ...classes)
-        },
-        {
-            as,
-            bsPrefix,
-            spans
-        }
-    ];
-}
-const Col = /*#__PURE__*/ _react.forwardRef((props, ref)=>{
-    const [{ className , ...colProps }, { as: Component = 'div' , bsPrefix , spans  }] = useCol(props);
-    return(/*#__PURE__*/ _jsxRuntime.jsx(Component, {
-        ...colProps,
-        ref: ref,
-        className: _classnamesDefault.default(className, !spans.length && bsPrefix)
-    }));
-});
-Col.displayName = 'Col';
-exports.default = Col;
-
-},{"classnames":"bOXOh","react":"6TuXu","./ThemeProvider":"eeqfi","react/jsx-runtime":"8xIwr","@parcel/transformer-js/src/esmodule-helpers.js":"ivraG"}],"jyMAr":[function() {},{}],"aP2YV":[function(require,module,exports) {
+},{}],"jyMAr":[function() {},{}],"aP2YV":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$8dd4 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -24820,7 +24592,39 @@ $RefreshReg$(_c, "RegistrationView");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"8xIwr","react":"6TuXu","@parcel/transformer-js/src/esmodule-helpers.js":"ivraG","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"bJ6ws","prop-types":"1tgq3"}],"bJ6ws":[function(require,module,exports) {
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","@parcel/transformer-js/src/esmodule-helpers.js":"ivraG","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"bJ6ws","prop-types":"1tgq3"}],"ivraG":[function(require,module,exports) {
+exports.interopDefault = function(a) {
+    return a && a.__esModule ? a : {
+        default: a
+    };
+};
+exports.defineInteropFlag = function(a) {
+    Object.defineProperty(a, '__esModule', {
+        value: true
+    });
+};
+exports.exportAll = function(source, dest) {
+    Object.keys(source).forEach(function(key) {
+        if (key === 'default' || key === '__esModule') return;
+        // Skip duplicate re-exports when they have the same value.
+        if (key in dest && dest[key] === source[key]) return;
+        Object.defineProperty(dest, key, {
+            enumerable: true,
+            get: function() {
+                return source[key];
+            }
+        });
+    });
+    return dest;
+};
+exports.export = function(dest, destName, get) {
+    Object.defineProperty(dest, destName, {
+        enumerable: true,
+        get: get
+    });
+};
+
+},{}],"bJ6ws":[function(require,module,exports) {
 "use strict";
 var Refresh = require('react-refresh/runtime');
 function debounce(func, delay) {
@@ -26133,7 +25937,41 @@ exports.default = Object.assign(Accordion, {
     Body: _accordionBodyDefault.default
 });
 
-},{"classnames":"bOXOh","react":"6TuXu","uncontrollable":"1g2Nf","./ThemeProvider":"eeqfi","./AccordionBody":"gVuFq","./AccordionButton":"k5nOg","./AccordionCollapse":"7EQRw","./AccordionContext":"5P6qw","./AccordionHeader":"fLLgH","./AccordionItem":"cWHPP","react/jsx-runtime":"8xIwr","@parcel/transformer-js/src/esmodule-helpers.js":"ivraG"}],"1g2Nf":[function(require,module,exports) {
+},{"classnames":"bOXOh","react":"6TuXu","uncontrollable":"1g2Nf","./ThemeProvider":"eeqfi","./AccordionBody":"gVuFq","./AccordionButton":"k5nOg","./AccordionCollapse":"7EQRw","./AccordionContext":"5P6qw","./AccordionHeader":"fLLgH","./AccordionItem":"cWHPP","react/jsx-runtime":"8xIwr","@parcel/transformer-js/src/esmodule-helpers.js":"ivraG"}],"bOXOh":[function(require,module,exports) {
+(function() {
+    var hasOwn = {
+    }.hasOwnProperty;
+    function classNames() {
+        var classes = [];
+        for(var i = 0; i < arguments.length; i++){
+            var arg = arguments[i];
+            if (!arg) continue;
+            var argType = typeof arg;
+            if (argType === 'string' || argType === 'number') classes.push(arg);
+            else if (Array.isArray(arg)) {
+                if (arg.length) {
+                    var inner = classNames.apply(null, arg);
+                    if (inner) classes.push(inner);
+                }
+            } else if (argType === 'object') {
+                if (arg.toString === Object.prototype.toString) {
+                    for(var key in arg)if (hasOwn.call(arg, key) && arg[key]) classes.push(key);
+                } else classes.push(arg.toString());
+            }
+        }
+        return classes.join(' ');
+    }
+    if (typeof module !== 'undefined' && module.exports) {
+        classNames.default = classNames;
+        module.exports = classNames;
+    } else if (typeof define === 'function' && typeof define.amd === 'object' && define.amd) // register as 'classnames', consistent with npm package name
+    define('classnames', [], function() {
+        return classNames;
+    });
+    else window.classNames = classNames;
+})();
+
+},{}],"1g2Nf":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "useUncontrolled", ()=>_hookDefault.default
@@ -26611,7 +26449,69 @@ function polyfill(Component) {
     return Component;
 }
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"ivraG"}],"gVuFq":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"ivraG"}],"eeqfi":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "useBootstrapPrefix", ()=>useBootstrapPrefix
+);
+parcelHelpers.export(exports, "useIsRTL", ()=>useIsRTL
+);
+parcelHelpers.export(exports, "createBootstrapComponent", ()=>createBootstrapComponent
+);
+parcelHelpers.export(exports, "ThemeConsumer", ()=>Consumer
+);
+var _react = require("react");
+var _jsxRuntime = require("react/jsx-runtime");
+const ThemeContext = /*#__PURE__*/ _react.createContext({
+    prefixes: {
+    }
+});
+const { Consumer , Provider  } = ThemeContext;
+function ThemeProvider({ prefixes ={
+} , dir , children  }) {
+    const contextValue = _react.useMemo(()=>({
+            prefixes: {
+                ...prefixes
+            },
+            dir
+        })
+    , [
+        prefixes,
+        dir
+    ]);
+    return(/*#__PURE__*/ _jsxRuntime.jsx(Provider, {
+        value: contextValue,
+        children: children
+    }));
+}
+function useBootstrapPrefix(prefix, defaultPrefix) {
+    const { prefixes  } = _react.useContext(ThemeContext);
+    return prefix || prefixes[defaultPrefix] || defaultPrefix;
+}
+function useIsRTL() {
+    const { dir  } = _react.useContext(ThemeContext);
+    return dir === 'rtl';
+}
+function createBootstrapComponent(Component, opts) {
+    if (typeof opts === 'string') opts = {
+        prefix: opts
+    };
+    const isClassy = Component.prototype && Component.prototype.isReactComponent; // If it's a functional component make sure we don't break it with a ref
+    const { prefix , forwardRefAs =isClassy ? 'ref' : 'innerRef'  } = opts;
+    const Wrapped = /*#__PURE__*/ _react.forwardRef(({ ...props }, ref)=>{
+        props[forwardRefAs] = ref;
+        const bsPrefix = useBootstrapPrefix(props.bsPrefix, prefix);
+        return(/*#__PURE__*/ _jsxRuntime.jsx(Component, {
+            ...props,
+            bsPrefix: bsPrefix
+        }));
+    });
+    Wrapped.displayName = `Bootstrap(${Component.displayName || Component.name})`;
+    return Wrapped;
+}
+exports.default = ThemeProvider;
+
+},{"react":"6TuXu","react/jsx-runtime":"8xIwr","@parcel/transformer-js/src/esmodule-helpers.js":"ivraG"}],"gVuFq":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _classnames = require("classnames");
@@ -29512,7 +29412,65 @@ var _react = require("react");
     );
 }
 
-},{"react":"6TuXu","@parcel/transformer-js/src/esmodule-helpers.js":"ivraG"}],"j2597":[function(require,module,exports) {
+},{"react":"6TuXu","@parcel/transformer-js/src/esmodule-helpers.js":"ivraG"}],"fbam0":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "useCol", ()=>useCol
+);
+var _classnames = require("classnames");
+var _classnamesDefault = parcelHelpers.interopDefault(_classnames);
+var _react = require("react");
+var _themeProvider = require("./ThemeProvider");
+var _jsxRuntime = require("react/jsx-runtime");
+const DEVICE_SIZES = [
+    'xxl',
+    'xl',
+    'lg',
+    'md',
+    'sm',
+    'xs'
+];
+function useCol({ as , bsPrefix , className , ...props }) {
+    bsPrefix = _themeProvider.useBootstrapPrefix(bsPrefix, 'col');
+    const spans = [];
+    const classes = [];
+    DEVICE_SIZES.forEach((brkPoint)=>{
+        const propValue = props[brkPoint];
+        delete props[brkPoint];
+        let span;
+        let offset;
+        let order;
+        if (typeof propValue === 'object' && propValue != null) ({ span , offset , order  } = propValue);
+        else span = propValue;
+        const infix = brkPoint !== 'xs' ? `-${brkPoint}` : '';
+        if (span) spans.push(span === true ? `${bsPrefix}${infix}` : `${bsPrefix}${infix}-${span}`);
+        if (order != null) classes.push(`order${infix}-${order}`);
+        if (offset != null) classes.push(`offset${infix}-${offset}`);
+    });
+    return [
+        {
+            ...props,
+            className: _classnamesDefault.default(className, ...spans, ...classes)
+        },
+        {
+            as,
+            bsPrefix,
+            spans
+        }
+    ];
+}
+const Col = /*#__PURE__*/ _react.forwardRef((props, ref)=>{
+    const [{ className , ...colProps }, { as: Component = 'div' , bsPrefix , spans  }] = useCol(props);
+    return(/*#__PURE__*/ _jsxRuntime.jsx(Component, {
+        ...colProps,
+        ref: ref,
+        className: _classnamesDefault.default(className, !spans.length && bsPrefix)
+    }));
+});
+Col.displayName = 'Col';
+exports.default = Col;
+
+},{"classnames":"bOXOh","react":"6TuXu","./ThemeProvider":"eeqfi","react/jsx-runtime":"8xIwr","@parcel/transformer-js/src/esmodule-helpers.js":"ivraG"}],"j2597":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _classnames = require("classnames");
@@ -36413,6 +36371,45 @@ const Ratio = /*#__PURE__*/ _react.forwardRef(({ bsPrefix , className , children
 });
 Ratio.defaultProps = defaultProps;
 exports.default = Ratio;
+
+},{"classnames":"bOXOh","react":"6TuXu","./ThemeProvider":"eeqfi","react/jsx-runtime":"8xIwr","@parcel/transformer-js/src/esmodule-helpers.js":"ivraG"}],"c0x1x":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _classnames = require("classnames");
+var _classnamesDefault = parcelHelpers.interopDefault(_classnames);
+var _react = require("react");
+var _themeProvider = require("./ThemeProvider");
+var _jsxRuntime = require("react/jsx-runtime");
+const DEVICE_SIZES = [
+    'xxl',
+    'xl',
+    'lg',
+    'md',
+    'sm',
+    'xs'
+];
+const Row = /*#__PURE__*/ _react.forwardRef(({ bsPrefix , className , // Need to define the default "as" during prop destructuring to be compatible with styled-components github.com/react-bootstrap/react-bootstrap/issues/3595
+as: Component = 'div' , ...props }, ref)=>{
+    const decoratedBsPrefix = _themeProvider.useBootstrapPrefix(bsPrefix, 'row');
+    const sizePrefix = `${decoratedBsPrefix}-cols`;
+    const classes = [];
+    DEVICE_SIZES.forEach((brkPoint)=>{
+        const propValue = props[brkPoint];
+        delete props[brkPoint];
+        let cols;
+        if (propValue != null && typeof propValue === 'object') ({ cols  } = propValue);
+        else cols = propValue;
+        const infix = brkPoint !== 'xs' ? `-${brkPoint}` : '';
+        if (cols != null) classes.push(`${sizePrefix}${infix}-${cols}`);
+    });
+    return(/*#__PURE__*/ _jsxRuntime.jsx(Component, {
+        ref: ref,
+        ...props,
+        className: _classnamesDefault.default(className, decoratedBsPrefix, ...classes)
+    }));
+});
+Row.displayName = 'Row';
+exports.default = Row;
 
 },{"classnames":"bOXOh","react":"6TuXu","./ThemeProvider":"eeqfi","react/jsx-runtime":"8xIwr","@parcel/transformer-js/src/esmodule-helpers.js":"ivraG"}],"jgNtX":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
