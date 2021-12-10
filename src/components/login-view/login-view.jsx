@@ -21,7 +21,10 @@ export function LoginView(props) {
 
     <Container fluid className="loginContainer" >
 
-      <Navbar bg="navColor" variant="dark" expand="lg">
+      <Navbar 
+        bg="navColor" 
+        variant="dark" 
+        expand="lg">
         <Container fluid>
           <Navbar.Brand href="#home">MyFlix-MovieTime</Navbar.Brand>
           <Nav className="me-auto">

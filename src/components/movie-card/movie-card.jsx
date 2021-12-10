@@ -15,10 +15,15 @@ export class MovieCard extends React.Component {
           <Col>
             <CardGroup>
               <Card className="movieCard text-center" >
-                <Card.Img className="cardImage" variant="top" src={movie.ImagePath} crossOrigin="anonymous"/>
+                <Card.Img 
+                  className="cardImage" 
+                  variant="top" 
+                  src={movie.ImagePath} 
+                  crossOrigin="anonymous"/>
                 <Card.Body>
                   <Card.Title>{movie.Title}</Card.Title>
-                  <Button variant="secondary" onClick={() => onMovieClick(movie)} >Details</Button>
+                  <Button variant="secondary" bg="dark" className="detail-btn"
+                  onClick={() => onMovieClick(movie)} > Details</Button>
                 </Card.Body>
               </Card>
             </CardGroup>

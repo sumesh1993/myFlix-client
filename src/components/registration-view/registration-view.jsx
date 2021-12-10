@@ -18,7 +18,10 @@ export function RegistrationView(props) {
 
         <Container fluid className="registerContainer" >
     
-        <Navbar bg="navColor" variant="dark" expand="lg">
+        <Navbar 
+          bg="navColor" 
+          variant="dark" 
+          expand="lg">
           <Container fluid>
             <Navbar.Brand href="#home">MyFlix-MovieTime</Navbar.Brand>
             <Nav className="me-auto">
