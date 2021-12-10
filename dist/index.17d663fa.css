@@ -12,6 +12,10 @@
   width: 100%;
   margin: 20px;
 }
+.movie-poster {
+  padding: 10px;
+  text-align: center;
+}
 html,
 body,
 .app-container {
