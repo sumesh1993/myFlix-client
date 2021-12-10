@@ -18,7 +18,7 @@ export function RegistrationView(props) {
 
         <Container fluid className="registerContainer" >
     
-        <Navbar bg="navColor" variant="ligth" expand="lg">
+        <Navbar bg="navColor" variant="dark" expand="lg">
           <Container fluid>
             <Navbar.Brand href="#home">MyFlix-MovieTime</Navbar.Brand>
             <Nav className="me-auto">
@@ -72,6 +72,12 @@ export function RegistrationView(props) {
 }
 
 RegistrationView.propTypes = {
+    register: PropTypes.shape({
+      Username: PropTypes.string.isRequired,
+      Password: PropTypes.string.isRequired,
+      Email: PropTypes.string.isRequired,
+      Birthday: PropTypes.string.isRequired
+    }),
     onRegistration: PropTypes.func.isRequired
 };
 
