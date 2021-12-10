@@ -81,7 +81,7 @@ export default class MainView extends React.Component {
 
     return (
       <div className="main-view">
-         <Navbar bg="navColor" variant="#020c15" expand="lg">
+         <Navbar bg="navColor" variant="ligth" expand="lg">
            <Container fluid>
              <Navbar.Brand href="#home">MyFlix-MovieTime</Navbar.Brand>
              <Nav className="me-auto">

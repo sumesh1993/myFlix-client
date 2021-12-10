@@ -22829,7 +22829,7 @@ class MainView extends _reactDefault.default.Component {
             children: [
                 /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Navbar, {
                     bg: "navColor",
-                    variant: "#020c15",
+                    variant: "ligth",
                     expand: "lg",
                     __source: {
                         fileName: "src/components/main-view/main-view.jsx",
