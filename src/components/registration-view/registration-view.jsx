@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import {Col, Row, Nav, Navbar, Card, Container, Form, Button, Container, CardGroup } from 'react-bootstrap';
 
 export function RegistrationView(props) {
     const [username, setUsername] = useState('');
