@@ -37799,8 +37799,7 @@ MovieCard.propTypes = {
         Description: _propTypesDefault.default.string.isRequired,
         Stars: _propTypesDefault.default.array.isRequired,
         Genre: _propTypesDefault.default.shape({
-            Name: _propTypesDefault.default.string.isRequired,
-            Description: _propTypesDefault.default.string.isRequired
+            Name: _propTypesDefault.default.string.isRequired
         }),
         Director: _propTypesDefault.default.shape({
             Name: _propTypesDefault.default.string.isRequired,
