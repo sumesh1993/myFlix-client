@@ -9,6 +9,9 @@ import { LoginView } from '../login-view/login-view';
 import { MovieCard } from '../movie-card/movie-card';
 import { MovieView } from '../movie-view/movie-view';
 
+
+
+
 export default class MainView extends React.Component {
 
   constructor() {
@@ -21,12 +24,9 @@ export default class MainView extends React.Component {
     };
   }
 
-  getMovies(token) {
-    axios.get('https://myflix-movietime.herokuapp.com/movies', {
-      headers: { Authorization: `Bearer ${token}`}
-    })
+  componentDidMount() {
+    axios.get('https://myflix-movietime.herokuapp.com/movies')
       .then(response => {
-        //Assign the result to the state
         this.setState({
           movies: response.data
         });
@@ -34,16 +34,6 @@ export default class MainView extends React.Component {
       .catch(error => {
         console.log(error);
       });
-  }
-
-  componentDidMount() {
-    let accessToken = localStorage.getItem('token');
-    if (accessToken !==null) {
-      this.setState({
-        user: localStorage.getItem('user')
-      });
-      this.getMovies(accessToken);
-    }
   }
 
   setSelectedMovie(newSelectedMovie) {
@@ -72,22 +62,9 @@ export default class MainView extends React.Component {
   the `user` property in state to that *particular user/ localStorage stores data in a client's 
   browser so they don't have to log in again*/
 
-  onLoggedIn(authData) {
-    console.log(authData);
+  onLoggedIn(user) {
     this.setState({
-      user: authData.user.Username
-    });
-
-    localStorage.setItem('token', authData.token);
-    localStorage.setItem('user', authData.user.Username);
-    this.getMovies(authData.token);
-  }
-
-  onLoggedOut() {
-    localStorage.removeItem('token');
-    localStorage.removeItem('user');
-    this.setState({
-      user: null
+      user
     });
   }
 
