@@ -24,9 +24,12 @@ export default class MainView extends React.Component {
     };
   }
 
-  componentDidMount() {
-    axios.get('https://myflix-movietime.herokuapp.com/movies')
+  getMovies(token) {
+    axios.get('https://myflix-movietime.herokuapp.com/movies', {
+      headers: { Authorization: `Bearer ${token}`}
+    })
       .then(response => {
+        //Assign the result to the state
         this.setState({
           movies: response.data
         });
