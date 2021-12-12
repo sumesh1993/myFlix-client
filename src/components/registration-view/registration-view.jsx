@@ -35,7 +35,7 @@ export function RegistrationView(props) {
            <CardGroup>
              <Card classname="registerCard">
               <Card.Body>
-                  <Card.Title classname="text-center">Welcome to MyFlix-MovieTime</Card.Title>
+                  <Card.Title className="text-center">Welcome to MyFlix-MovieTime</Card.Title>
                   <Card.Subtitle className="mb-2 text-muted text-center">Register Here</Card.Subtitle>
 
                <Form>
@@ -99,11 +99,3 @@ RegistrationView.propTypes = {
     }),
     onRegistration: PropTypes.func.isRequired
 };
-
-
-        
-        
-
-       
-
- 
