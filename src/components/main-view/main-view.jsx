@@ -92,20 +92,25 @@ export default class MainView extends React.Component {
   }
 
   render() {
-    const { movies, selectedMovie, user, register  } = this.state;
+    const { movies, user,} = this.state; //may need to add register
 
     //if (!register) return (<RegistrationView onRegistration={(register) => this.onRegistration(register)}/>);
 
 
     /* If there is no user, the LoginView is rendered. 
     If there is a user logged in, the user details are *passed as a prop to the LoginView*/
-    if (!user) return <LoginView onLoggedIn={user => this.onLoggedIn(user)} />;
-
-    if (movies.length === 0) return <div className="main-view" />
+    if (!user) return <Row>
+      <Col>
+         <LoginView onLoggedIn={user => this.onLoggedIn(user)}/>
+      </Col>
+    </Row>
+    if (movies.length === 0) return <div className="main-view"/>
 
     return (
 
-      <div className="main-view">
+      <Router>
+
+        <div className="main-view">
          <Navbar bg="navColor" variant="dark" expand="lg">
            <Container fluid>
              <Navbar.Brand href="#home">MyFlix-MovieTime</Navbar.Brand>
@@ -116,33 +121,25 @@ export default class MainView extends React.Component {
              </Nav>
            </Container>
          </Navbar>
-         <div>
-           <Container>
-             {selectedMovie
-               ? (
-                 <Row className="justify-content-lg-center">
-                   <Col lg={9} >
-                     <MovieView movie={selectedMovie} onBackClick={newSelectedMovie => { this.setSelectedMovie(newSelectedMovie); }}/>
-                   </Col>
-                 </Row>
-               )
-               : (
-                 <Row className="justify-content-lg-center">
-                   { movies.map(movie => (
-                     <Col lg={3} md={4} sm={6} >
-                       <MovieCard key={movie._id} movie={movie} onMovieClick={(newSelectedMovie) => { this.setSelectedMovie(newSelectedMovie) }} />
-                     </Col>
-                     ))
-                   }
-                 </Row>
-               )  
-             }
-           </Container>
-         </div>
-          
-      </div>
-     );
+      <div>
+      <Row className="main-view justify-content-md-center">
+          <Route exact path="/" render={() => {
+            return movies.map(m => (
+              <Col md={3} key={m._id}>
+                <MovieCard movie={m} />
+              </Col>
+            ))
+          }} />
+          <Route path="/movies/:movieId" render={({ match }) => {
+            return <Col md={8}>
+              <MovieView movie={movies.find(m => m._id === match.params.movieId)} />
+            </Col>
+          }} />
 
-   }
-
+        </Row>
+        </div>
+        </div>
+      </Router>
+    );
+  }
 }
