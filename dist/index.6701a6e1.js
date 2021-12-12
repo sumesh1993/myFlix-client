@@ -22769,6 +22769,19 @@ class MainView extends _reactDefault.default.Component {
             user: null
         };
     }
+    getMovies(token) {
+        _axiosDefault.default.get('https://myflix-movietime.herokuapp.com/movies', {
+            headers: {
+                Authorization: `Bearer ${token}`
+            }
+        }).then((response)=>{
+            this.setState({
+                movies: response.data
+            });
+        }).catch(function(error) {
+            console.log(error);
+        });
+    }
     componentDidMount() {
         let accessToken = localStorage.getItem('token');
         if (accessToken !== null) {
@@ -22810,19 +22823,6 @@ class MainView extends _reactDefault.default.Component {
         localStorage.removeItem('user');
         this.setState({
             user: null
-        });
-    }
-    getMovies(token) {
-        _axiosDefault.default.get('https://myflix-movietime.herokuapp.com/movies', {
-            headers: {
-                Authorization: `Bearer ${token}`
-            }
-        }).then((response)=>{
-            this.setState({
-                movies: response.data
-            });
-        }).catch(function(error) {
-            console.log(error);
         });
     }
     render() {
