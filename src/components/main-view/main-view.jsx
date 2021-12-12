@@ -72,7 +72,7 @@ export default class MainView extends React.Component {
   the `user` property in state to that *particular user/ localStorage stores data in a client's 
   browser so they don't have to log in again*/
 
-  onLoggedIn(authData) {
+  /*onLoggedIn(authData) {
     console.log(authData);
     this.setState({
       user: authData.user.Username
@@ -88,6 +88,12 @@ export default class MainView extends React.Component {
     localStorage.removeItem('user');
     this.setState({
       user: null
+    });
+  }*/
+
+  onLoggedIn(user) {
+    this.setState({
+      user
     });
   }
 
