@@ -93,7 +93,7 @@ export default class MainView extends React.Component {
   render() {
     const { movies, selectedMovie, user, register  } = this.state;
 
-    if (!register) return (<RegistrationView onRegistration={(register) => this.onRegistration(register)}/>);
+    //if (!register) return (<RegistrationView onRegistration={(register) => this.onRegistration(register)}/>);
 
 
     /* If there is no user, the LoginView is rendered. 
@@ -103,6 +103,7 @@ export default class MainView extends React.Component {
     if (movies.length === 0) return <div className="main-view" />
 
     return (
+
       <div className="main-view">
          <Navbar bg="navColor" variant="dark" expand="lg">
            <Container fluid>
@@ -110,7 +111,7 @@ export default class MainView extends React.Component {
              <Nav className="me-auto">
                <Nav.Link href="#home">Movies</Nav.Link>
                <Nav.Link href="#user">Profile</Nav.Link>
-               <Nav.Link href="#logout">Logout</Nav.Link>
+               <Nav.Link href="/" onClick={() => {this.onLoggedout()}}>Logout</Nav.Link>
              </Nav>
            </Container>
          </Navbar>
