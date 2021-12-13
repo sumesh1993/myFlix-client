@@ -19,8 +19,8 @@ export default class MainView extends React.Component {
     super();
     this.state = {       // Initial state is set to null
       movies: [],
-      //selectedMovie: null,
-      //register: null,
+       selectedMovie: null,
+       register: null,
       user: null
     };
   }
@@ -119,7 +119,7 @@ export default class MainView extends React.Component {
 
       <Router>
 
-        <Container fluid>
+         <Container fluid>
            <Navbar bg="navColor" variant="dark" expand="lg">
               <Navbar.Brand href="#home">MyFlix-MovieTime</Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
