@@ -35,12 +35,6 @@ export function LoginView(props) {
         bg="navColor" 
         variant="dark" 
         expand="lg">
-        <Container fluid>
-          <Navbar.Brand href="#home">MyFlix-MovieTime</Navbar.Brand>
-          <Nav className="me-auto">
-            <Nav.Link href="#logout">Login</Nav.Link>
-          </Nav>
-        </Container>
       </Navbar>
 
       <Card className="loginCard">
