@@ -39409,18 +39409,30 @@ class MovieCard extends _reactDefault.default.Component {
                                             __self: this,
                                             children: movie.Title
                                         }),
-                                        /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Button, {
-                                            variant: "secondary",
-                                            bg: "dark",
-                                            className: "detail-btn",
-                                            onClick: ()=>onMovieClick(movie)
-                                            ,
+                                        /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Card.Text, {
                                             __source: {
                                                 fileName: "src/components/movie-card/movie-card.jsx",
                                                 lineNumber: 26
                                             },
                                             __self: this,
-                                            children: " Details"
+                                            children: movie.Description
+                                        }),
+                                        /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Link, {
+                                            to: `/movies/${movie._id}`,
+                                            __source: {
+                                                fileName: "src/components/movie-card/movie-card.jsx",
+                                                lineNumber: 27
+                                            },
+                                            __self: this,
+                                            children: /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Button, {
+                                                variant: "link",
+                                                __source: {
+                                                    fileName: "src/components/movie-card/movie-card.jsx",
+                                                    lineNumber: 28
+                                                },
+                                                __self: this,
+                                                children: "Open"
+                                            })
                                         })
                                     ]
                                 })
