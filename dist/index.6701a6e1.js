@@ -39345,40 +39345,41 @@ var _reactDefault = parcelHelpers.interopDefault(_react);
 var _propTypes = require("prop-types");
 var _propTypesDefault = parcelHelpers.interopDefault(_propTypes);
 var _reactBootstrap = require("react-bootstrap");
+var _reactRouterDom = require("react-router-dom");
 var _movieCardScss = require("./movie-card.scss");
 class MovieCard extends _reactDefault.default.Component {
     render() {
-        const { movie , onMovieClick  } = this.props;
+        const { movie  } = this.props;
         return(/*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Container, {
             className: "movieContainer",
             __source: {
                 fileName: "src/components/movie-card/movie-card.jsx",
-                lineNumber: 13
+                lineNumber: 14
             },
             __self: this,
             children: /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Row, {
                 __source: {
                     fileName: "src/components/movie-card/movie-card.jsx",
-                    lineNumber: 14
+                    lineNumber: 15
                 },
                 __self: this,
                 children: /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Col, {
                     __source: {
                         fileName: "src/components/movie-card/movie-card.jsx",
-                        lineNumber: 15
+                        lineNumber: 16
                     },
                     __self: this,
                     children: /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.CardGroup, {
                         __source: {
                             fileName: "src/components/movie-card/movie-card.jsx",
-                            lineNumber: 16
+                            lineNumber: 17
                         },
                         __self: this,
                         children: /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Card, {
                             className: "movieCard text-center",
                             __source: {
                                 fileName: "src/components/movie-card/movie-card.jsx",
-                                lineNumber: 17
+                                lineNumber: 18
                             },
                             __self: this,
                             children: [
@@ -39389,21 +39390,21 @@ class MovieCard extends _reactDefault.default.Component {
                                     crossOrigin: "anonymous",
                                     __source: {
                                         fileName: "src/components/movie-card/movie-card.jsx",
-                                        lineNumber: 18
+                                        lineNumber: 19
                                     },
                                     __self: this
                                 }),
                                 /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Card.Body, {
                                     __source: {
                                         fileName: "src/components/movie-card/movie-card.jsx",
-                                        lineNumber: 23
+                                        lineNumber: 24
                                     },
                                     __self: this,
                                     children: [
                                         /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Card.Title, {
                                             __source: {
                                                 fileName: "src/components/movie-card/movie-card.jsx",
-                                                lineNumber: 24
+                                                lineNumber: 25
                                             },
                                             __self: this,
                                             children: movie.Title
@@ -39416,7 +39417,7 @@ class MovieCard extends _reactDefault.default.Component {
                                             ,
                                             __source: {
                                                 fileName: "src/components/movie-card/movie-card.jsx",
-                                                lineNumber: 25
+                                                lineNumber: 26
                                             },
                                             __self: this,
                                             children: " Details"
@@ -39453,7 +39454,7 @@ MovieCard.propTypes = {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"8xIwr","react":"6TuXu","prop-types":"1tgq3","react-bootstrap":"h2YVd","./movie-card.scss":"cF5gT","@parcel/transformer-js/src/esmodule-helpers.js":"ivraG","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"bJ6ws"}],"cF5gT":[function() {},{}],"ikZdr":[function(require,module,exports) {
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","prop-types":"1tgq3","react-bootstrap":"h2YVd","./movie-card.scss":"cF5gT","@parcel/transformer-js/src/esmodule-helpers.js":"ivraG","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"bJ6ws","react-router-dom":"kjA5T"}],"cF5gT":[function() {},{}],"ikZdr":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$3741 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;

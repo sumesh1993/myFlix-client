@@ -1,13 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Button, Card, CardGroup, Container, Row, Col } from 'react-bootstrap';
+import {link} from 'react-router-dom';
 
 import './movie-card.scss';
 
 
 export class MovieCard extends React.Component {
   render() {
-    const { movie, onMovieClick  } = this.props;
+    const { movie} = this.props;
 
     return (
       <Container className="movieContainer">
