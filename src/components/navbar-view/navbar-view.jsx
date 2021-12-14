@@ -1,6 +1,6 @@
 import React from 'react';
 
-import {Navbar, Container} from 'react-boostrap';
+import {Navbar, Container, Nav} from 'react-bootstrap';
 
 
 import './navbar-view.scss';
@@ -22,8 +22,8 @@ export class Navbar extends React.Component {
               <Navbar.Brand href="#home">MyFlix-MovieTime</Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                   <Navbar.Collapse id="basic-navbar-nav">
-                    <Nav className="me-auto">
-                    <Nav.Link href="/">Movies</Nav.Link>
+                    <Nav className="me-auto navbar-menu">
+                      <Nav.Link href="/">Movies</Nav.Link>
                       <Nav.Link href="/users/:username">Profile</Nav.Link>
                       <Nav.Link href="/" onClick={() => { this.onLoggedOut() }}>Logout</Nav.Link>
                     </Nav>

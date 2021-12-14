@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
-import { Row, Col, Nav, Navbar, Container } from 'react-bootstrap';
+import { Row, Col, Container } from 'react-bootstrap';
 
 import "./main-view.scss";
 
@@ -11,7 +11,8 @@ import { MovieCard } from '../movie-card/movie-card';
 import { MovieView } from '../movie-view/movie-view';
 import { ProfileView } from '../profile-view/profile-view';
 import { GenreView } from '../genre-view/genre-view';
-import { DirectorView} from '../director-view/director-view';
+import { DirectorView } from '../director-view/director-view';
+import { NavBarView } from '../navbar-view/navbar-view';
 
 export default class MainView extends React.Component {
 
@@ -58,11 +59,11 @@ export default class MainView extends React.Component {
   /*When a movie is clicked, this function is invoked and updates the
    state of the `selectedMovie` *property to that movie*/
 
-  /*setSelectedMovie(movie) {
-    //this.setState({
-      //selectedMovie: movie
+  setSelectedMovie(movie) {
+    this.setState({
+      selectedMovie: movie
     });
-  }*/
+  }
 
   onRegistration(register) {
     this.state({
@@ -118,6 +119,7 @@ export default class MainView extends React.Component {
     return (
 
       <Router>
+        <NavBarView/>
         <div>
           <Container>
             <Row className="main-view justify-content-md-center">
