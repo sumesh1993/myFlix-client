@@ -32,13 +32,6 @@ export function RegistrationView(props) {
     return (
 
         <Container fluid className="registerContainer" >
-    
-        <Navbar 
-          bg="navColor" 
-          variant="dark" 
-          expand="lg">
-        </Navbar>
-
         <Row>
           <Col>
            <CardGroup>
