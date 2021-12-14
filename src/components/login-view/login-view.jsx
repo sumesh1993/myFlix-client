@@ -30,13 +30,6 @@ export function LoginView(props) {
   return (
 
     <Container fluid className="loginContainer" >
-
-      <Navbar 
-        bg="navColor" 
-        variant="dark" 
-        expand="lg">
-      </Navbar>
-
       <Card className="loginCard">
         <Card.Body>
           <Card.Title className="text-center">Welcome to MyFlix-MovieTime</Card.Title>

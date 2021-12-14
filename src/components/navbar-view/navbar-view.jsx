@@ -5,7 +5,7 @@ import {Navbar, Container, Nav} from 'react-bootstrap';
 
 import './navbar-view.scss';
 
-export class Navbar extends React.Component {
+export default class Navbar extends React.Component {
     constructor() {
         super();
         this.state={};
