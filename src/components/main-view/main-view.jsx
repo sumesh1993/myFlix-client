@@ -18,7 +18,7 @@ export default class MainView extends React.Component {
 
   constructor() {
     super();
-    this.state = {       // Initial state is set to null
+    this.state = {      
       movies: [],
        selectedMovie: null,
        register: null,
@@ -71,11 +71,6 @@ export default class MainView extends React.Component {
    });
    }
 
-
-  /* When a user successfully logs in, this function updates 
-  the `user` property in state to that *particular user/ localStorage stores data in a client's 
-  browser so they don't have to log in again*/
-
   onLoggedIn(authData) {
     console.log(authData);
     this.setState({
@@ -96,30 +91,14 @@ export default class MainView extends React.Component {
     window.open("/", "_self");
   }
 
- /*onLoggedIn(user) {
-    this.setState({
-      user
-    });
-  }*/
-
   render() {
     const { movies, user} = this.state; //may need to add register
 
     //if (!register) return (<RegistrationView onRegistration={(register) => this.onRegistration(register)}/>)
 
-
-    /* If there is no user, the LoginView is rendered. 
-    If there is a user logged in, the user details are *passed as a prop to the LoginView*/
-    //if (!user) return <Row>
-      //<Col>
-         //<LoginView onLoggedIn={user => this.onLoggedIn(user)}/>
-      //</Col>
-    //</Row>
-    //if (movies.length === 0) return <div className="main-view"/>
-
     return (
 
-      <Router>
+     <Router>
       <Route path='/' render={() => {
           if (user) return <Row>
               <Col md={12}>
@@ -198,6 +177,7 @@ export default class MainView extends React.Component {
 
       </Row>
   </Router>
+  
     );
    }
  }
