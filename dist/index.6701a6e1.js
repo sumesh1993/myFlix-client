@@ -39797,8 +39797,83 @@ MovieView.propTypes = {
 },{"react/jsx-runtime":"8xIwr","react":"6TuXu","prop-types":"1tgq3","react-bootstrap":"h2YVd","./movie-view.scss":"kvL93","@parcel/transformer-js/src/esmodule-helpers.js":"ivraG","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"bJ6ws"}],"kvL93":[function() {},{}],"2E7Aw":[function(require,module,exports) {
 
 },{}],"8WCoL":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$5f0a = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$5f0a.prelude(module);
 
-},{}],"ck15y":[function(require,module,exports) {
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "GenreView", ()=>GenreView
+);
+var _jsxRuntime = require("react/jsx-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _propTypes = require("prop-types");
+var _propTypesDefault = parcelHelpers.interopDefault(_propTypes);
+var _reactBootstrap = require("react-bootstrap");
+var _reactBootstrapDefault = parcelHelpers.interopDefault(_reactBootstrap);
+function GenreView({ movie , onBackClick  }) {
+    return(/*#__PURE__*/ _jsxRuntime.jsxs("div", {
+        className: "genre-view",
+        __source: {
+            fileName: "src/components/genre-view/genre-view.jsx",
+            lineNumber: 7
+        },
+        __self: this,
+        children: [
+            /*#__PURE__*/ _jsxRuntime.jsx("h1", {
+                __source: {
+                    fileName: "src/components/genre-view/genre-view.jsx",
+                    lineNumber: 8
+                },
+                __self: this,
+                children: movie.Genre.Name
+            }),
+            /*#__PURE__*/ _jsxRuntime.jsx("h3", {
+                __source: {
+                    fileName: "src/components/genre-view/genre-view.jsx",
+                    lineNumber: 9
+                },
+                __self: this,
+                children: movie.Genre.Description
+            }),
+            /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrapDefault.default, {
+                className: "mt-5",
+                variant: "dark",
+                size: "md",
+                onClick: ()=>onBackClick()
+                ,
+                __source: {
+                    fileName: "src/components/genre-view/genre-view.jsx",
+                    lineNumber: 10
+                },
+                __self: this,
+                children: "Back"
+            })
+        ]
+    }));
+}
+_c = GenreView;
+GenreView.propTypes = {
+    movie: _propTypesDefault.default.shape({
+        Genre: _propTypesDefault.default.shape({
+            Name: _propTypesDefault.default.string.isRequired,
+            Description: _propTypesDefault.default.string.isRequired
+        }).isRequired
+    }).isRequired,
+    onBackClick: _propTypesDefault.default.func.isRequired
+};
+var _c;
+$RefreshReg$(_c, "GenreView");
+
+  $parcel$ReactRefreshHelpers$5f0a.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","prop-types":"1tgq3","react-bootstrap":"h2YVd","@parcel/transformer-js/src/esmodule-helpers.js":"ivraG","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"bJ6ws"}],"ck15y":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$f8cc = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
