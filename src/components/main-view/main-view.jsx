@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
-import { Row, Col, Container } from 'react-bootstrap';
+import { Row, Col } from 'react-bootstrap';
 
 import "./main-view.scss";
 
@@ -121,8 +121,6 @@ export default class MainView extends React.Component {
 
       <Router>
         <NavBarView/>
-        <div>
-          <Container>
             <Row className="main-view justify-content-md-center">
 
           <Route exact path="/" render={() => {
@@ -189,8 +187,8 @@ export default class MainView extends React.Component {
       }/>
 
         </Row>
-      </Container>
-    </div>
+     
+  
   </Router>
     );
   }
