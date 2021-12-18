@@ -2,9 +2,9 @@ import React from "react";
 import { Navbar, Container, Nav, Button, NavItem } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
-import "./navbar-view.scss";
+import "./navbar.scss";
 
-export function NavBarView() {
+export function Navbar() {
     const user = localStorage.getItem("user");
 
     onLoggedOut = () => {

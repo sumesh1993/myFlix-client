@@ -22762,7 +22762,7 @@ var _movieView = require("../movie-view/movie-view");
 var _profileView = require("../profile-view/profile-view");
 var _genreView = require("../genre-view/genre-view");
 var _directorView = require("../director-view/director-view");
-var _navbarView = require("../navbar-view/navbar-view");
+var _navbar = require("../navbar/navbar");
 class MainView extends _reactDefault.default.Component {
     constructor(){
         super();
@@ -22844,7 +22844,7 @@ class MainView extends _reactDefault.default.Component {
                         if (user) return(/*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Row, {
                             children: /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Col, {
                                 md: 12,
-                                children: /*#__PURE__*/ _jsxRuntime.jsx(_navbarView.NavBarView, {
+                                children: /*#__PURE__*/ _jsxRuntime.jsx(_navbar.Navbar, {
                                     onLoggedOut: ()=>this.onLoggedOut()
                                 })
                             })
@@ -23027,7 +23027,7 @@ exports.default = MainView;
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"8xIwr","react":"6TuXu","axios":"iYoWk","react-router-dom":"kjA5T","react-bootstrap":"h2YVd","./main-view.scss":"jyMAr","../registration-view/registration-view":"aP2YV","../login-view/login-view":"054li","../movie-card/movie-card":"6EiBJ","../movie-view/movie-view":"ikZdr","../profile-view/profile-view":"2E7Aw","../genre-view/genre-view":"8WCoL","../director-view/director-view":"ck15y","../navbar-view/navbar-view":"j0Dt2","@parcel/transformer-js/src/esmodule-helpers.js":"ivraG","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"bJ6ws"}],"iYoWk":[function(require,module,exports) {
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","axios":"iYoWk","react-router-dom":"kjA5T","react-bootstrap":"h2YVd","./main-view.scss":"jyMAr","../registration-view/registration-view":"aP2YV","../login-view/login-view":"054li","../movie-card/movie-card":"6EiBJ","../movie-view/movie-view":"ikZdr","../profile-view/profile-view":"2E7Aw","../genre-view/genre-view":"8WCoL","../director-view/director-view":"ck15y","@parcel/transformer-js/src/esmodule-helpers.js":"ivraG","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"bJ6ws","../navbar/navbar":"63yS7"}],"iYoWk":[function(require,module,exports) {
 module.exports = require('./lib/axios');
 
 },{"./lib/axios":"3QmO2"}],"3QmO2":[function(require,module,exports) {
@@ -40219,24 +40219,24 @@ $RefreshReg$(_c, "DirectorView");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"8xIwr","react":"6TuXu","prop-types":"1tgq3","react-bootstrap":"h2YVd","@parcel/transformer-js/src/esmodule-helpers.js":"ivraG","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"bJ6ws"}],"j0Dt2":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$469c = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","prop-types":"1tgq3","react-bootstrap":"h2YVd","@parcel/transformer-js/src/esmodule-helpers.js":"ivraG","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"bJ6ws"}],"63yS7":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$1bb2 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$469c.prelude(module);
+$parcel$ReactRefreshHelpers$1bb2.prelude(module);
 
 try {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "NavBarView", ()=>NavBarView
+parcelHelpers.export(exports, "Navbar", ()=>Navbar
 );
 var _jsxRuntime = require("react/jsx-runtime");
 var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
 var _reactBootstrap = require("react-bootstrap");
 var _reactRouterDom = require("react-router-dom");
-var _navbarViewScss = require("./navbar-view.scss");
-function NavBarView() {
+var _navbarScss = require("./navbar.scss");
+function Navbar() {
     const user = localStorage.getItem("user");
     onLoggedOut = ()=>{
         localStorage.clear();
@@ -40249,14 +40249,14 @@ function NavBarView() {
         expand: "lg md",
         fixed: "top",
         __source: {
-            fileName: "src/components/navbar-view/navbar-view.jsx",
+            fileName: "src/components/navbar/navbar.jsx",
             lineNumber: 16
         },
         __self: this,
         children: /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Container, {
             fluid: true,
             __source: {
-                fileName: "src/components/navbar-view/navbar-view.jsx",
+                fileName: "src/components/navbar/navbar.jsx",
                 lineNumber: 17
             },
             __self: this,
@@ -40264,14 +40264,14 @@ function NavBarView() {
                 /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Navbar.Toggle, {
                     "aria-controls": "basic-navbar-nav",
                     __source: {
-                        fileName: "src/components/navbar-view/navbar-view.jsx",
+                        fileName: "src/components/navbar/navbar.jsx",
                         lineNumber: 18
                     },
                     __self: this
                 }),
                 /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Navbar.Collapse, {
                     __source: {
-                        fileName: "src/components/navbar-view/navbar-view.jsx",
+                        fileName: "src/components/navbar/navbar.jsx",
                         lineNumber: 19
                     },
                     __self: this,
@@ -40279,7 +40279,7 @@ function NavBarView() {
                         /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Nav, {
                             className: "me-auto navbar-menu",
                             __source: {
-                                fileName: "src/components/navbar-view/navbar-view.jsx",
+                                fileName: "src/components/navbar/navbar.jsx",
                                 lineNumber: 20
                             },
                             __self: this,
@@ -40287,7 +40287,7 @@ function NavBarView() {
                                 /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Link, {
                                     to: `/users/${user}`,
                                     __source: {
-                                        fileName: "src/components/navbar-view/navbar-view.jsx",
+                                        fileName: "src/components/navbar/navbar.jsx",
                                         lineNumber: 21
                                     },
                                     __self: this,
@@ -40297,7 +40297,7 @@ function NavBarView() {
                                         },
                                         href: "",
                                         __source: {
-                                            fileName: "src/components/navbar-view/navbar-view.jsx",
+                                            fileName: "src/components/navbar/navbar.jsx",
                                             lineNumber: 22
                                         },
                                         __self: this,
@@ -40310,13 +40310,13 @@ function NavBarView() {
                                         paddingLeft: "25px"
                                     },
                                     __source: {
-                                        fileName: "src/components/navbar-view/navbar-view.jsx",
+                                        fileName: "src/components/navbar/navbar.jsx",
                                         lineNumber: 26
                                     },
                                     __self: this,
                                     children: /*#__PURE__*/ _jsxRuntime.jsxs("p", {
                                         __source: {
-                                            fileName: "src/components/navbar-view/navbar-view.jsx",
+                                            fileName: "src/components/navbar/navbar.jsx",
                                             lineNumber: 27
                                         },
                                         __self: this,
@@ -40325,7 +40325,7 @@ function NavBarView() {
                                             /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Link, {
                                                 to: `/users/${user}`,
                                                 __source: {
-                                                    fileName: "src/components/navbar-view/navbar-view.jsx",
+                                                    fileName: "src/components/navbar/navbar.jsx",
                                                     lineNumber: 27
                                                 },
                                                 __self: this,
@@ -40340,7 +40340,7 @@ function NavBarView() {
                         /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Nav.Link, {
                             className: "d-flex",
                             __source: {
-                                fileName: "src/components/navbar-view/navbar-view.jsx",
+                                fileName: "src/components/navbar/navbar.jsx",
                                 lineNumber: 30
                             },
                             __self: this,
@@ -40351,7 +40351,7 @@ function NavBarView() {
                                     this.onLoggedOut();
                                 },
                                 __source: {
-                                    fileName: "src/components/navbar-view/navbar-view.jsx",
+                                    fileName: "src/components/navbar/navbar.jsx",
                                     lineNumber: 31
                                 },
                                 __self: this,
@@ -40364,15 +40364,15 @@ function NavBarView() {
         })
     }));
 }
-_c = NavBarView;
+_c = _reactBootstrap.Navbar;
 var _c;
-$RefreshReg$(_c, "NavBarView");
+$RefreshReg$(_c, "Navbar");
 
-  $parcel$ReactRefreshHelpers$469c.postlude(module);
+  $parcel$ReactRefreshHelpers$1bb2.postlude(module);
 } finally {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"8xIwr","react":"6TuXu","react-bootstrap":"h2YVd","react-router-dom":"kjA5T","./navbar-view.scss":"eDP1C","@parcel/transformer-js/src/esmodule-helpers.js":"ivraG","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"bJ6ws"}],"eDP1C":[function() {},{}],"jUTZ8":[function() {},{}]},["82zjU","ivKX3","dLPEP"], "dLPEP", "parcelRequireaec4")
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","react-bootstrap":"h2YVd","react-router-dom":"kjA5T","@parcel/transformer-js/src/esmodule-helpers.js":"ivraG","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"bJ6ws","./navbar.scss":"eqSoH"}],"eqSoH":[function() {},{}],"jUTZ8":[function() {},{}]},["82zjU","ivKX3","dLPEP"], "dLPEP", "parcelRequireaec4")
 
 //# sourceMappingURL=index.6701a6e1.js.map
