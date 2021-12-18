@@ -1,18 +1,15 @@
 import React from 'react';
 import axios from 'axios';
-import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
-import { Row, Col } from 'react-bootstrap';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 import "./main-view.scss";
 
-import { RegistrationView } from '../registration-view/registration-view';
-import { LoginView } from '../login-view/login-view';
-import { MovieCard } from '../movie-card/movie-card';
-import { MovieView } from '../movie-view/movie-view';
-import { ProfileView } from '../profile-view/profile-view';
-import { GenreView } from '../genre-view/genre-view';
-import { DirectorView } from '../director-view/director-view';
-import { Navbar } from '../navbar/navbar';
+import { HomeView } from '../home-view/home-view';
+import { RegistrationView } from  '../registration-view/registration-view';
+import { MoviePage } from '../movie-page/movie-page';
+import { ProfilePage } from '../profile-page/profile-page';
+import { GenrePage } from '../genre-page/genre-page';
+import { DirectorPage } from '../director-page/director-page';
 
 export default class MainView extends React.Component {
 
@@ -99,83 +96,22 @@ export default class MainView extends React.Component {
     return (
 
      <Router>
-      <Route path='/' render={() => {
-          if (user) return <Row>
-              <Col md={12}>
-                  <Navbar onLoggedOut={() => this.onLoggedOut()} />
-              </Col>
-          </Row>
-      }} />
-      <Row className="justify-content-md-center p-2">
+          <Route exact path="/" render={HomeView} />
 
-          {/* login page */}
-          <Route exact path='/' render={() => {
-              if (!user) return <Col>
-                  <LoginView onLoggedIn={user => this.onLoggedIn(user)} />
-              </Col>
-              if (movies.length === 0) return <div className="main-view" />;
-              return <MovieCard movies={movies} />
-          }} />
+          <Route exact path="/" render={ProfilePage} />
 
-          {/* register page */}
+          <Route exact path="/" render={MoviePage} />
+
+          <Route exact path="/" render={DirectorPage} />
+
+          <Route exact path="/" render={GenrePage} />
+
           <Route path='/register' render={() => {
               if (user) return <Redirect to="/" />
               return <Col>
                   <RegistrationView />
               </Col>
           }} />
-
-          {/* profile page */}
-          <Route path='/profile' render={({ history }) => {
-              if (!user) return <Col>
-                  <LoginView onLoggedIn={user => this.onLoggedIn(user)} />
-              </Col>
-              if (movies.length === 0) return <div className="main-view" />;
-              return <Col md={12}>
-                  <ProfileView user={user} setUser={user => this.setUser(user)}
-                      movies={movies} onLoggedOut={() => this.onLoggedOut()} onBackClick={() => history.goBack()}
-                  />
-              </Col>
-          }} />
-
-          {/* movie page */}
-          <Route path='/movies/:movieId' render={({ match, history }) => {
-              if (!user) return <Col>
-                  <LoginView onLoggedIn={user => this.onLoggedIn(user)} />
-              </Col>
-              if (movies.length === 0) return <div className="main-view" />;
-              return <Col md={8}>
-                  <MovieView movie={movies.find(m => m._id === match.params.movieId)} user={user}
-                      setUser={user => this.setUser(user)} onBackClick={() => history.goBack()}
-                  />
-              </Col>
-          }} />
-
-          {/* director page */}
-          <Route path='/directors/:directorName' render={({ match, history }) => {
-              if (!user) return <Col>
-                  <LoginView onLoggedIn={user => this.onLoggedIn(user)} />
-              </Col>
-              if (movies.length === 0) return <div className="main-view" />;
-              return <Col md={8}>
-                  <DirectorView movie={movies.find(m => m.Director.Name === match.params.directorName)}
-                      onBackClick={() => history.goBack()}
-                  />
-              </Col>
-          }} />
-
-          {/* genre page */}
-          <Route path='/genres/:genreName' render={({ match, history }) => {
-              if (!user) return <Col>
-                  <LoginView onLoggedIn={user => this.onLoggedIn(user)} />
-              </Col>
-              if (movies.length === 0) return <div className="main-view" />;
-              return <Col md={8}>
-                  <GenreView movie={movies.find(m => m.Genre.Name === match.params.genreName)} onBackClick={() => history.goBack()} />
-              </Col>
-          }} />
-
-      </Row>
   </Router>
   
     );

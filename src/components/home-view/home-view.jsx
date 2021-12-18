@@ -1,5 +1,5 @@
 import React from 'react';
-import { MovieCard } from '../movie-card-movie-card';
+import { MovieCard } from '../movie-card/movie-card';
 import { Navbar } from '../navbar/navbar';
 import { LoginView } from '../login-view/login-view';
 

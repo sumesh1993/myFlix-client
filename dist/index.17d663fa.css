@@ -1,5 +1,7 @@
 
-
+.bg-navColor {
+  background-color: #ec7900;
+}
 
 .cardImage {
   width: 100% !important;
@@ -16,9 +18,6 @@
   text-align: center;
 }
 
-.bg-navColor {
-  background-color: #ec7900;
-}
 html,
 body,
 .app-container {
