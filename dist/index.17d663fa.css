@@ -1,7 +1,4 @@
 
-.bg-navColor {
-  background-color: #ec7900;
-}
 
 .cardImage {
   width: 100% !important;
@@ -13,11 +10,14 @@
   width: 100%;
   margin: 20px;
 }
+.bg-navColor {
+  background-color: #ec7900;
+}
+
 .movie-poster {
   padding: 10px;
   text-align: center;
 }
-
 
 html,
 body,

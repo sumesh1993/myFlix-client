@@ -1,6 +1,6 @@
 import React from 'react';
 import axios from 'axios';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import "./main-view.scss";
 
@@ -95,7 +95,8 @@ export default class MainView extends React.Component {
 
     return (
 
-     <Router>
+   <div>
+     <Routes>
           <Route exact path="/" render={HomeView} />
 
           <Route exact path="/" render={ProfilePage} />
@@ -112,8 +113,10 @@ export default class MainView extends React.Component {
                   <RegistrationView />
               </Col>
           }} />
-  </Router>
+    </Routes>
+  /</div>
   
     );
    }
  }
+
