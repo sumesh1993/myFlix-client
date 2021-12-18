@@ -1,6 +1,6 @@
 import React from 'react';
 import axios from 'axios';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route } from "react-router-dom";
 
 import "./main-view.scss";
 
@@ -89,34 +89,33 @@ export default class MainView extends React.Component {
   }
 
   render() {
-    const { movies, user} = this.state; //may need to add register
+    const { user} = this.state; //may need to add register
 
     //if (!register) return (<RegistrationView onRegistration={(register) => this.onRegistration(register)}/>)
 
     return (
 
-   <div>
-     <Routes>
-          <Route exact path="/" render={HomePage} />
-
-          <Route exact path="/" render={ProfilePage} />
-
-          <Route exact path="/" render={MoviePage} />
-
-          <Route exact path="/" render={DirectorPage} />
-
-          <Route exact path="/" render={GenrePage} />
-
-          <Route path='/register' render={() => {
-              if (user) return <Redirect to="/" />
-              return <Col>
-                  <RegistrationView />
-              </Col>
-          }} />
-    </Routes>
-  /</div>
+     
+        <Router>
+            <Route exact path="/" render={HomePage} />
   
-    );
+            <Route exact path="/profile" render={ProfilePage} />
+  
+            <Route exact path="/movies/:movieId" render={MoviePage} />
+  
+            <Route exact path="/directors/:directorName" render={DirectorPage} />
+  
+            <Route exact path="/genres/:genreName" render={GenrePage} />
+  
+            <Route path='/register' render={() => {
+                if (user) return <Redirect to="/" />
+                return <Col>
+                    <RegistrationView />
+                </Col>
+            }} />
+      </Router>
+ 
+      );
+     }
    }
- }
 
