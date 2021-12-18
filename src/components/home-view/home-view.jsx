@@ -1,5 +1,7 @@
-import React from 'react'
-import { MovieCard } from "../movie-card/movie-card";
+import React from 'react';
+import { MovieCard } from '../movie-card-movie-card';
+import { Navbar } from '../navbar/navbar';
+import { LoginView } from '../login-view/login-view';
 
 export class HomeView extends React.Component {
     render() {
