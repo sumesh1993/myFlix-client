@@ -4,7 +4,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import "./main-view.scss";
 
-import { HomeView } from '../home-view/home-view';
+import { HomePage } from '../home-page/home-page';
 import { RegistrationView } from  '../registration-view/registration-view';
 import { MoviePage } from '../movie-page/movie-page';
 import { ProfilePage } from '../profile-page/profile-page';
@@ -97,7 +97,7 @@ export default class MainView extends React.Component {
 
    <div>
      <Routes>
-          <Route exact path="/" render={HomeView} />
+          <Route exact path="/" render={HomePage} />
 
           <Route exact path="/" render={ProfilePage} />
 
