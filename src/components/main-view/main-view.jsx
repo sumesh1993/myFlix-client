@@ -12,7 +12,7 @@ import { MovieView } from '../movie-view/movie-view';
 import { ProfileView } from '../profile-view/profile-view';
 import { GenreView } from '../genre-view/genre-view';
 import { DirectorView } from '../director-view/director-view';
-import { NavBarView } from '../navbar-view/navbar-view';
+import { Navbar } from '../navbar/navbar';
 
 export default class MainView extends React.Component {
 
@@ -102,7 +102,7 @@ export default class MainView extends React.Component {
       <Route path='/' render={() => {
           if (user) return <Row>
               <Col md={12}>
-                  <NavBarView onLoggedOut={() => this.onLoggedOut()} />
+                  <Navbar onLoggedOut={() => this.onLoggedOut()} />
               </Col>
           </Row>
       }} />
