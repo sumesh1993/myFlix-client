@@ -5,6 +5,7 @@ import { GenreView } from "../genre-view/genre-view";
 
 export class GenrePage extends React.Component {
     render() {
+      const { user, movies } = this.state;
         if (!user) return <Col>
         <Navbar/>
           <LoginView onLoggedIn={user => this.onLoggedIn(user)} />

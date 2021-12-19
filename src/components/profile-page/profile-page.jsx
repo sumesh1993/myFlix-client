@@ -5,6 +5,7 @@ import { LoginView } from '../login-view/login-view';
 
 export class ProfilePage extends React.Component {
     render() {
+      const { user, movies } = this.state;
         if (!user) return <Col>
         <Navbar/>
         <LoginView onLoggedIn={user => this.onLoggedIn(user)}/>
