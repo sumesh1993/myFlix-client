@@ -3,7 +3,7 @@ import { MovieCard } from '../movie-card/movie-card';
 import { Navbar } from '../navbar/navbar';
 import { LoginView } from '../login-view/login-view';
 
-export class HomeView extends React.Component {
+export class HomePage extends React.Component {
     render() {
         if (!user) return <Col>
         <Navbar/>
