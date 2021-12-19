@@ -1,14 +1,4 @@
 
-
-
-.bg-navColor {
-  background-color: #ec7900;
-}
-.movie-poster {
-  padding: 10px;
-  text-align: center;
-}
-
 .cardImage {
   width: 100% !important;
   height: 300px !important;
@@ -19,6 +9,16 @@
   width: 100%;
   margin: 20px;
 }
+.bg-navColor {
+  background-color: #ec7900;
+}
+
+
+.movie-poster {
+  padding: 10px;
+  text-align: center;
+}
+
 html,
 body,
 .app-container {
