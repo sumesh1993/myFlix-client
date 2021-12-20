@@ -22828,81 +22828,88 @@ class MainView extends _reactDefault.default.Component {
     render() {
         const { user  } = this.state; //may need to add register
         //if (!register) return (<RegistrationView onRegistration={(register) => this.onRegistration(register)}/>)
-        return(/*#__PURE__*/ _jsxRuntime.jsxs(_reactRouterDom.BrowserRouter, {
+        return(/*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.BrowserRouter, {
             __source: {
                 fileName: "src/components/main-view/main-view.jsx",
                 lineNumber: 99
             },
             __self: this,
-            children: [
-                /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Route, {
-                    exact: true,
-                    path: "/",
-                    render: _homePage.HomePage,
-                    __source: {
-                        fileName: "src/components/main-view/main-view.jsx",
-                        lineNumber: 100
-                    },
-                    __self: this
-                }),
-                /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Route, {
-                    exact: true,
-                    path: "/profile",
-                    render: _profilePage.ProfilePage,
-                    __source: {
-                        fileName: "src/components/main-view/main-view.jsx",
-                        lineNumber: 102
-                    },
-                    __self: this
-                }),
-                /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Route, {
-                    exact: true,
-                    path: "/movies/:movieId",
-                    render: _moviePage.MoviePage,
-                    __source: {
-                        fileName: "src/components/main-view/main-view.jsx",
-                        lineNumber: 104
-                    },
-                    __self: this
-                }),
-                /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Route, {
-                    exact: true,
-                    path: "/directors/:directorName",
-                    render: _directorPage.DirectorPage,
-                    __source: {
-                        fileName: "src/components/main-view/main-view.jsx",
-                        lineNumber: 106
-                    },
-                    __self: this
-                }),
-                /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Route, {
-                    exact: true,
-                    path: "/genres/:genreName",
-                    render: _genrePage.GenrePage,
-                    __source: {
-                        fileName: "src/components/main-view/main-view.jsx",
-                        lineNumber: 108
-                    },
-                    __self: this
-                }),
-                /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Route, {
-                    path: "/register",
-                    render: ()=>{
-                        if (user) return(/*#__PURE__*/ _jsxRuntime.jsx(Redirect, {
-                            to: "/"
-                        }));
-                        return(/*#__PURE__*/ _jsxRuntime.jsx(Col, {
-                            children: /*#__PURE__*/ _jsxRuntime.jsx(_registrationView.RegistrationView, {
-                            })
-                        }));
-                    },
-                    __source: {
-                        fileName: "src/components/main-view/main-view.jsx",
-                        lineNumber: 110
-                    },
-                    __self: this
-                })
-            ]
+            children: /*#__PURE__*/ _jsxRuntime.jsxs(_reactRouterDom.Routes, {
+                __source: {
+                    fileName: "src/components/main-view/main-view.jsx",
+                    lineNumber: 100
+                },
+                __self: this,
+                children: [
+                    /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Route, {
+                        path: "/",
+                        element: /*#__PURE__*/ _jsxRuntime.jsx(_homePage.HomePage, {
+                        }),
+                        __source: {
+                            fileName: "src/components/main-view/main-view.jsx",
+                            lineNumber: 101
+                        },
+                        __self: this
+                    }),
+                    /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Route, {
+                        path: "/profile",
+                        elementr: /*#__PURE__*/ _jsxRuntime.jsx(_profilePage.ProfilePage, {
+                        }),
+                        __source: {
+                            fileName: "src/components/main-view/main-view.jsx",
+                            lineNumber: 103
+                        },
+                        __self: this
+                    }),
+                    /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Route, {
+                        path: "/movies/:movieId",
+                        element: /*#__PURE__*/ _jsxRuntime.jsx(_moviePage.MoviePage, {
+                        }),
+                        __source: {
+                            fileName: "src/components/main-view/main-view.jsx",
+                            lineNumber: 105
+                        },
+                        __self: this
+                    }),
+                    /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Route, {
+                        path: "/directors/:directorName",
+                        element: /*#__PURE__*/ _jsxRuntime.jsx(_directorPage.DirectorPage, {
+                        }),
+                        __source: {
+                            fileName: "src/components/main-view/main-view.jsx",
+                            lineNumber: 107
+                        },
+                        __self: this
+                    }),
+                    /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Route, {
+                        path: "/genres/:genreName",
+                        element: /*#__PURE__*/ _jsxRuntime.jsx(_genrePage.GenrePage, {
+                        }),
+                        __source: {
+                            fileName: "src/components/main-view/main-view.jsx",
+                            lineNumber: 109
+                        },
+                        __self: this
+                    }),
+                    /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Route, {
+                        path: "/register",
+                        render: ()=>{
+                            if (user) return(/*#__PURE__*/ _jsxRuntime.jsx(Redirect, {
+                                to: "/"
+                            }));
+                            return(/*#__PURE__*/ _jsxRuntime.jsx(Col, {
+                                children: /*#__PURE__*/ _jsxRuntime.jsx(_registrationView.RegistrationView, {
+                                })
+                            }));
+                        },
+                        __source: {
+                            fileName: "src/components/main-view/main-view.jsx",
+                            lineNumber: 111
+                        },
+                        __self: this
+                    })
+                ]
+            })
         }));
     }
 }
@@ -26198,56 +26205,48 @@ var _reactDefault = parcelHelpers.interopDefault(_react);
 var _movieCard = require("../movie-card/movie-card");
 var _navbar = require("../navbar/navbar");
 var _loginView = require("../login-view/login-view");
+var _reactBootstrap = require("react-bootstrap");
 class HomePage extends _reactDefault.default.Component {
     render() {
-        const { user , movies  } = this.state;
-        if (!user) return(/*#__PURE__*/ _jsxRuntime.jsxs(Col, {
+        const { user , movies  } = this.props;
+        if (!user) return(/*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Col, {
             __source: {
                 fileName: "src/components/home-page/home-page.jsx",
-                lineNumber: 9
+                lineNumber: 10
             },
             __self: this,
-            children: [
-                /*#__PURE__*/ _jsxRuntime.jsx(_navbar.Navbar, {
-                    __source: {
-                        fileName: "src/components/home-page/home-page.jsx",
-                        lineNumber: 10
-                    },
-                    __self: this
-                }),
-                /*#__PURE__*/ _jsxRuntime.jsx(_loginView.LoginView, {
-                    onLoggedIn: (user1)=>this.onLoggedIn(user1)
-                    ,
-                    __source: {
-                        fileName: "src/components/home-page/home-page.jsx",
-                        lineNumber: 11
-                    },
-                    __self: this
-                })
-            ]
+            children: /*#__PURE__*/ _jsxRuntime.jsx(_loginView.LoginView, {
+                onLoggedIn: (user1)=>this.onLoggedIn(user1)
+                ,
+                __source: {
+                    fileName: "src/components/home-page/home-page.jsx",
+                    lineNumber: 12
+                },
+                __self: this
+            })
         }));
         if (movies.length === 0) return(/*#__PURE__*/ _jsxRuntime.jsx("div", {
             className: "main-view",
             __source: {
                 fileName: "src/components/home-page/home-page.jsx",
-                lineNumber: 14
+                lineNumber: 15
             },
             __self: this
         }));
-        return movies.map((m)=>/*#__PURE__*/ _jsxRuntime.jsx(Col, {
+        return movies.map((m)=>/*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Col, {
                 sm: 6,
                 md: 4,
                 lg: 3,
                 __source: {
                     fileName: "src/components/home-page/home-page.jsx",
-                    lineNumber: 17
+                    lineNumber: 18
                 },
                 __self: this,
                 children: /*#__PURE__*/ _jsxRuntime.jsx(_movieCard.MovieCard, {
                     movie: m,
                     __source: {
                         fileName: "src/components/home-page/home-page.jsx",
-                        lineNumber: 18
+                        lineNumber: 19
                     },
                     __self: this
                 })
@@ -26261,7 +26260,7 @@ class HomePage extends _reactDefault.default.Component {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"8xIwr","react":"6TuXu","../movie-card/movie-card":"6EiBJ","../navbar/navbar":"63yS7","../login-view/login-view":"054li","@parcel/transformer-js/src/esmodule-helpers.js":"ivraG","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"bJ6ws"}],"6EiBJ":[function(require,module,exports) {
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","../movie-card/movie-card":"6EiBJ","../navbar/navbar":"63yS7","../login-view/login-view":"054li","@parcel/transformer-js/src/esmodule-helpers.js":"ivraG","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"bJ6ws","react-bootstrap":"h2YVd"}],"6EiBJ":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$4249 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;

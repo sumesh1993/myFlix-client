@@ -1,6 +1,6 @@
 import React from 'react';
 import axios from 'axios';
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import "./main-view.scss";
 
@@ -97,15 +97,16 @@ export default class MainView extends React.Component {
 
      
         <Router>
-            <Route exact path="/" render={HomePage} />
+          <Routes>
+            <Route path="/" element={<HomePage/>} />
   
-            <Route exact path="/profile" render={ProfilePage} />
+            <Route path="/profile" elementr={<ProfilePage/>} />
   
-            <Route exact path="/movies/:movieId" render={MoviePage} />
+            <Route path="/movies/:movieId" element={<MoviePage/>} />
   
-            <Route exact path="/directors/:directorName" render={DirectorPage} />
+            <Route  path="/directors/:directorName" element={<DirectorPage/>} />
   
-            <Route exact path="/genres/:genreName" render={GenrePage} />
+            <Route  path="/genres/:genreName" element={<GenrePage/>} />
   
             <Route path='/register' render={() => {
                 if (user) return <Redirect to="/" />
@@ -113,6 +114,7 @@ export default class MainView extends React.Component {
                     <RegistrationView />
                 </Col>
             }} />
+            </Routes>
       </Router>
  
       );

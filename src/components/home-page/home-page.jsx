@@ -2,12 +2,13 @@ import React from 'react';
 import { MovieCard } from '../movie-card/movie-card';
 import { Navbar } from '../navbar/navbar';
 import { LoginView } from '../login-view/login-view';
+import { Col } from 'react-bootstrap';
 
 export class HomePage extends React.Component {
     render() {
-        const { user, movies} = this.state
+        const { user, movies } = this.props;
         if (!user) return <Col>
-        <Navbar/>
+      
         <LoginView onLoggedIn={user => this.onLoggedIn(user)}/>
         </Col>
 
