@@ -2,6 +2,7 @@ import React from 'react';
 import { LoginView } from '../login-view/login-view';
 import { Navbar } from '../navbar/navbar';
 import { DirectorView } from '../director-view/director-view';
+import { Col } from 'react-bootstrap';
 
 export class DirectorPage extends React.Component {
     render() {

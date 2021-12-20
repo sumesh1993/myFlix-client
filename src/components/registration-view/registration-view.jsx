@@ -5,7 +5,7 @@ import axios from 'axios';
 
 import './registration-view.scss';
 
-export function RegistrationView(props) {
+export function RegistrationView() {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [email, setEmail] = useState('');
@@ -35,7 +35,7 @@ export function RegistrationView(props) {
         <Row>
           <Col>
            <CardGroup>
-             <Card classname="registerCard">
+             <Card className="registerCard">
               <Card.Body>
                   <Card.Title className="text-center">Welcome to MyFlix-MovieTime</Card.Title>
                   <Card.Subtitle className="mb-2 text-muted text-center">Register Here</Card.Subtitle>

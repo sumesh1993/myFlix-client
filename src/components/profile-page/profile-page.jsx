@@ -2,6 +2,7 @@ import React from 'react';
 import { ProfileView } from '../profile-view/profile-view';
 import { Navbar } from '../navbar/navbar';
 import { LoginView } from '../login-view/login-view';
+import { Col } from 'react-bootstrap';
 
 export class ProfilePage extends React.Component {
     render() {

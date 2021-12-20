@@ -8,7 +8,7 @@ export class HomePage extends React.Component {
     render() {
         const { user, movies } = this.props;
         if (!user) return <Col>
-      
+        <Navbar/>
         <LoginView onLoggedIn={user => this.onLoggedIn(user)}/>
         </Col>
 

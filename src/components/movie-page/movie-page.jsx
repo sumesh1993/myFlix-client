@@ -2,6 +2,7 @@ import React from 'react';
 import { LoginView } from '../login-view/login-view';
 import { Navbar } from '../navbar/navbar';
 import { MovieView } from '../movie-view/movie-view';
+import { Col } from 'react-bootstrap';
 
 export class MoviePage extends React.Component {
     render() {

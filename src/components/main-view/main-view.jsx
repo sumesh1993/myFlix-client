@@ -89,7 +89,7 @@ export default class MainView extends React.Component {
   }
 
   render() {
-    const { user} = this.state; //may need to add register
+    const { user, register } = this.state; //may need to add register
 
     //if (!register) return (<RegistrationView onRegistration={(register) => this.onRegistration(register)}/>)
 
@@ -104,9 +104,9 @@ export default class MainView extends React.Component {
   
             <Route path="/movies/:movieId" element={<MoviePage/>} />
   
-            <Route  path="/directors/:directorName" element={<DirectorPage/>} />
+            <Route path="/directors/:directorName" element={<DirectorPage/>} />
   
-            <Route  path="/genres/:genreName" element={<GenrePage/>} />
+            <Route path="/genres/:genreName" element={<GenrePage/>} />
   
             <Route path='/register' render={() => {
                 if (user) return <Redirect to="/" />
