@@ -20,6 +20,25 @@ export class HomePage extends React.Component {
           console.log(error)
         });
       }
+      componentDidMount() {
+        let accessToken = localStorage.getItem('token');
+        if (accessToken !== null) {
+          this.setState({
+            user: localStorage.getItem('user')
+          });
+          this.getMovies(accessToken);
+        }
+      }
+      setSelectedMovie(newSelectedMovie) {
+        this.setState({
+          selectedMovie: newSelectedMovie
+        });
+      }
+      setSelectedMovie(movie) {
+        this.setState({
+          selectedMovie: movie
+        });
+      }
     onLoggedIn(authData) {
         console.log(authData);
         this.setState({
@@ -33,7 +52,7 @@ export class HomePage extends React.Component {
 
     render() {
         const { user, movies } = this.props;
-        
+
         if (!user) 
         return <Col>
         <Navbar/>

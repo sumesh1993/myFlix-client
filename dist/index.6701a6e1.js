@@ -26222,6 +26222,25 @@ class HomePage extends _reactDefault.default.Component {
             console.log(error);
         });
     }
+    componentDidMount() {
+        let accessToken = localStorage.getItem('token');
+        if (accessToken !== null) {
+            this.setState({
+                user: localStorage.getItem('user')
+            });
+            this.getMovies(accessToken);
+        }
+    }
+    setSelectedMovie(newSelectedMovie) {
+        this.setState({
+            selectedMovie: newSelectedMovie
+        });
+    }
+    setSelectedMovie(movie) {
+        this.setState({
+            selectedMovie: movie
+        });
+    }
     onLoggedIn(authData) {
         console.log(authData);
         this.setState({
@@ -26236,14 +26255,14 @@ class HomePage extends _reactDefault.default.Component {
         if (!user) return(/*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Col, {
             __source: {
                 fileName: "src/components/home-page/home-page.jsx",
-                lineNumber: 38
+                lineNumber: 57
             },
             __self: this,
             children: [
                 /*#__PURE__*/ _jsxRuntime.jsx(_navbar.Navbar, {
                     __source: {
                         fileName: "src/components/home-page/home-page.jsx",
-                        lineNumber: 39
+                        lineNumber: 58
                     },
                     __self: this
                 }),
@@ -26252,7 +26271,7 @@ class HomePage extends _reactDefault.default.Component {
                     ,
                     __source: {
                         fileName: "src/components/home-page/home-page.jsx",
-                        lineNumber: 40
+                        lineNumber: 59
                     },
                     __self: this
                 })
@@ -26262,7 +26281,7 @@ class HomePage extends _reactDefault.default.Component {
             className: "main-view",
             __source: {
                 fileName: "src/components/home-page/home-page.jsx",
-                lineNumber: 43
+                lineNumber: 62
             },
             __self: this
         }));
@@ -26272,14 +26291,14 @@ class HomePage extends _reactDefault.default.Component {
                 lg: 3,
                 __source: {
                     fileName: "src/components/home-page/home-page.jsx",
-                    lineNumber: 46
+                    lineNumber: 65
                 },
                 __self: this,
                 children: /*#__PURE__*/ _jsxRuntime.jsx(_movieCard.MovieCard, {
                     movie: m,
                     __source: {
                         fileName: "src/components/home-page/home-page.jsx",
-                        lineNumber: 47
+                        lineNumber: 66
                     },
                     __self: this
                 })
