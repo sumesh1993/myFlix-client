@@ -1,0 +1,28 @@
+
+.cardImage {
+  width: 100% !important;
+  height: 300px !important;
+  object-fit: cover;
+}
+
+.movieCard {
+  width: 100%;
+  margin: 20px;
+}
+.bg-navColor {
+  background-color: #ec7900;
+}
+
+
+.movie-poster {
+  padding: 10px;
+  text-align: center;
+}
+
+html,
+body,
+.app-container {
+  background-color: #0a75ad;
+  font-family: "Lato", sans-serif;
+}
+/*# sourceMappingURL=index.css.map */
