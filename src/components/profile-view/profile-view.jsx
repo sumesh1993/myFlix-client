@@ -5,7 +5,7 @@ import axios from 'axios';
 
 import './profile-view.scss';
 
-export function ProfileView({ user, setUser, onLoggedOut}) {
+export function ProfileView({ user, setUser, onLoggedOut }) {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [email, setEmail] = useState=('');
